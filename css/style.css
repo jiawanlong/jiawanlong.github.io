@@ -25,6 +25,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 14px; }
 
+#arcicleVister {
+  margin-left: 20px; }
+
 .body_container {
   padding: 0 60px;
   width: 80%;
@@ -33,6 +36,12 @@ body {
 .content_container {
   padding-right: 50px;
   padding-top: 20px; }
+
+@media screen and (max-width: 1200px) {
+  .body_container {
+    padding: 0 20px;
+    width: 100% !important;
+    margin: 0 auto; } }
 
 a, button.submit {
   color: #6E7173;
