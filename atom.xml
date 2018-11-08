@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jiawanlong.github.io/"/>
-  <updated>2018-10-11T07:12:55.330Z</updated>
+  <updated>2018-11-08T10:44:20.285Z</updated>
   <id>https://jiawanlong.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leaflet汇总</title>
+    <link href="https://jiawanlong.github.io/2018/11/08/leaflet%E6%B1%87%E6%80%BB/"/>
+    <id>https://jiawanlong.github.io/2018/11/08/leaflet汇总/</id>
+    <published>2018-11-08T10:34:21.137Z</published>
+    <updated>2018-11-08T10:44:20.285Z</updated>
+    
+    <content type="html"><![CDATA[<p>乱七八糟的功能，没时间总结。。。纯当笔记了</p><ul><li><a href="https://jiawanlong.github.io/demo/leaflet/leaflet%E6%96%87%E5%AD%97%E6%A0%87%E6%B3%A8.html">leaflet文字标注</a></li><li><a href="https://jiawanlong.github.io/demo/leaflet/leaflet%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%9C%86%E7%BA%BF.html">leaflet多边形圆线</a></li><li><a href="https://jiawanlong.github.io/demo/leaflet/leaflet%E5%90%84%E7%A7%8D%E4%BA%8B%E4%BB%B6.html">leaflet各种事件</a></li><li><a href="https://jiawanlong.github.io/demo">leaflet量距和量面完整包下载</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;乱七八糟的功能，没时间总结。。。纯当笔记了&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jiawanlong.github.io/demo/leaflet/leaflet%E6%96%87%E5%AD%97%E6%A0%87%E6%B3%A8.html&quot;&gt;l
+      
+    
+    </summary>
+    
+      <category term="FUCK WORK" scheme="https://jiawanlong.github.io/categories/FUCK-WORK/"/>
+    
+    
+      <category term="leaflet" scheme="https://jiawanlong.github.io/tags/leaflet/"/>
+    
+      <category term="gis" scheme="https://jiawanlong.github.io/tags/gis/"/>
+    
+  </entry>
   
   <entry>
     <title>vuex小白入门</title>
