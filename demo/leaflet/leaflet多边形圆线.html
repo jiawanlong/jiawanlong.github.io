@@ -15,24 +15,135 @@
 <html>
 
 <head>
-    <title>iceSkating-mobile-demo</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <style>
-        li{
-            height: 2rem;
-            line-height: 2rem;
-            font-size: 1rem;
+    <title>Leaflet Measure Path - example</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css">
+    <link rel="stylesheet" href="./measure/lib/leaflet-measure-path.css">
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            font-size: 10px;
+        }
+
+        #map {
+            width: 800px;
+            height: 500px;
         }
     </style>
 </head>
 
 <body>
-   <li><a target="_blank" href="touch/index.html">Moblie和PC兼容的手动滑动和幻灯片</a></li>
-   <li><a href="./leaflet/leaflet文字标注.html">leaflet文字标注</a></li>
-   <li><a href="./leaflet/leaflet多边形圆线.html">leaflet多边形圆线</a></li>
-   <li><a href="./leaflet/leaflet各种事件.html">leaflet各种事件</a></li>
-   <li><a href="./leaflet/measure.rar">leaflet量距和量面完整包下载</a></li>
+    <div id="map"></div>
+    <button id="mesureBtn" onclick="areaMeasure.init()">面积测量</button>
+
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet-src.js"></script>
+    <script src="https://unpkg.com/leaflet-editable@latest/src/Leaflet.Editable.js"></script>
+    <script src="./measure/lib/leaflet-measure-path.js"></script>
+    <script type="text/javascript">
+        var map = L.map('map', {
+            editable: true
+        }).setView([57.69, 11.9], 13);
+        L.tileLayer('http://tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+
+        var polygon = L.polygon([
+                [57.69, 11.89],
+                [57.697, 11.88],
+                [57.71, 11.89],
+                [57.71, 11.91],
+                [57.69, 11.91]
+            ], {
+                showMeasurements: true
+            })
+            .addTo(map);
+
+        L.polyline([
+                [57.67, 11.85],
+                [57.677, 11.86],
+                [57.68, 11.85],
+                [57.69, 11.86],
+            ], {
+                showMeasurements: true,
+                measurementOptions: {
+                    imperial: true
+                }
+            })
+            .addTo(map);
+
+        L.circle([57.694, 11.94], 1000, {
+                showMeasurements: true
+            })
+            .addTo(map);
+
+        L.circle([57.705, 11.92], 750, {
+                showMeasurements: true,
+                measurementOptions: {
+                    imperial: true
+                }
+            })
+            .addTo(map);
+
+        polygon.enableEdit();
+        map.on('editable:vertex:drag editable:vertex:deleted', polygon.updateMeasurements, polygon);
+
+        // 面积测量方法
+        var areaMeasure = {
+            points: [],
+            color: "red",
+            layers: L.layerGroup(),
+            polygon: null,
+            init: function () {
+                areaMeasure.points = [];
+                areaMeasure.polygon = null;
+                map.on('click', areaMeasure.click).on('dblclick', areaMeasure.dblclick);
+            },
+            close: function () {
+                var lab = rectangleMeasure.tips.getLabel();
+                var tt = document.createTextNode(rectangleMeasure.tips.getLabel()._content);
+                lab._container.innerHTML = "";
+                lab._container.appendChild(tt);
+                var span = document.createElement("span");
+                span.innerHTML = "【关闭】";
+                span.style.color = "#00ff40";
+                lab._container.appendChild(span);
+                L.DomEvent.addListener(span, "click", function () {
+                    rectangleMeasure.destory();
+                });
+            },
+            click: function (e) {
+                map.doubleClickZoom.disable();
+                // 添加点信息
+                areaMeasure.points.push(e.latlng);
+                // 添加面
+                map.on('mousemove', areaMeasure.mousemove);
+            },
+            mousemove: function (e) {
+                areaMeasure.points.push(e.latlng);
+                if (areaMeasure.polygon)
+                    map.removeLayer(areaMeasure.polygon);
+                areaMeasure.polygon = L.polygon(areaMeasure.points, {
+                    showMeasurements: true,
+                    color: 'red'
+                });
+                //areaMeasure.polygon.addTo(map);
+                areaMeasure.polygon.addTo(areaMeasure.layers);
+                areaMeasure.layers.addTo(map);
+                areaMeasure.points.pop();
+            },
+            dblclick: function (e) { // 双击结束
+                areaMeasure.polygon.addTo(areaMeasure.layers);
+                areaMeasure.polygon.enableEdit();
+                map.on('editable:vertex:drag editable:vertex:deleted', areaMeasure.polygon.updateMeasurements,
+                    areaMeasure.polygon);
+                map.off('click', areaMeasure.click).off('mousemove', areaMeasure.mousemove).off('dblclick',
+                    areaMeasure.dblclick);
+            },
+            destory: function () {
+
+            }
+        }
+    </script>
 </body>
 
 </html></div></div><div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQwMC8xMzkzNA"><script>(function(d, s) {

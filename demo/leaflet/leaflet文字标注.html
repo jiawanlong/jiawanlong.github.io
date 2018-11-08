@@ -12,27 +12,67 @@
   s.parentNode.insertBefore(hm, s);
   })();
   </script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">狗敦A季</h1><a id="logo" href="/.">狗敦A季</a><p class="description">贾宛龙的个人博客</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a class="current" href="/demo/"><i class="fa fa-archive"> DEMO</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-content"><!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>iceSkating-mobile-demo</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>文字标注</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css">
     <style>
-        li{
-            height: 2rem;
-            line-height: 2rem;
-            font-size: 1rem;
+        #map
+        {
+            width:1000px;
+            height:1000px;
         }
+        .my-div-icon{
+            font-size:15px;
+            background:red;
+            color:#fff;
+        }
+        .anim-tooltip{
+            transition: opacity 4.0s linear;/*动画效果*/
+            font:italic bold 12px/30px arial,sans-serif;
+            font-family:"Times New Roman",Georgia,Serif;
+        }
+
     </style>
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 </head>
 
 <body>
-   <li><a target="_blank" href="touch/index.html">Moblie和PC兼容的手动滑动和幻灯片</a></li>
-   <li><a href="./leaflet/leaflet文字标注.html">leaflet文字标注</a></li>
-   <li><a href="./leaflet/leaflet多边形圆线.html">leaflet多边形圆线</a></li>
-   <li><a href="./leaflet/leaflet各种事件.html">leaflet各种事件</a></li>
-   <li><a href="./leaflet/measure.rar">leaflet量距和量面完整包下载</a></li>
+    <div id="map"></div>
+    <script type="text/javascript">
+        var map = new L.Map('map');
+        var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        var osm = new L.TileLayer(osmUrl, {
+            minZoom: 1,
+            maxZoom: 18
+        });
+        map.addLayer(osm);
+        map.setView(new L.LatLng(31.864942016, 117.2882028929), 11);
+        var myIcon = L.divIcon({
+            html: "狗子",
+            className: 'my-div-icon',
+            iconSize: 30
+        });
+
+
+        var marker = L.marker([31.2, 114.5], {
+                // icon:myIcon
+            }).addTo(map)
+            // 设置label
+            .bindTooltip("This is a test.", {
+                permanent: true,
+                offset: [0, 0], // 偏移
+                direction: "right", // 放置位置
+                // sticky:true,//是否标记在点上面
+                className: 'anim-tooltip', // CSS控制
+            }).openTooltip();
+
+        L.marker([31.864942016, 117.2882028929], {
+            icon: myIcon
+        }).addTo(map);
+    </script>
 </body>
 
 </html></div></div><div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQwMC8xMzkzNA"><script>(function(d, s) {

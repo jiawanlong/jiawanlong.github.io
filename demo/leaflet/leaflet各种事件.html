@@ -15,24 +15,53 @@
 <html>
 
 <head>
-    <title>iceSkating-mobile-demo</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css">
     <style>
-        li{
-            height: 2rem;
-            line-height: 2rem;
-            font-size: 1rem;
+        #map
+        {
+            width:1000px;
+            height:1000px;
+            float: left;
         }
     </style>
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 </head>
 
 <body>
-   <li><a target="_blank" href="touch/index.html">Moblie和PC兼容的手动滑动和幻灯片</a></li>
-   <li><a href="./leaflet/leaflet文字标注.html">leaflet文字标注</a></li>
-   <li><a href="./leaflet/leaflet多边形圆线.html">leaflet多边形圆线</a></li>
-   <li><a href="./leaflet/leaflet各种事件.html">leaflet各种事件</a></li>
-   <li><a href="./leaflet/measure.rar">leaflet量距和量面完整包下载</a></li>
+    <div id="map"></div>
+    <div>
+        leaflet的地图事件主要有以下几类： <br>
+        1. 图层事件：<br>
+
+        baselayerchange，overlayadd，overlayremove，layeradd，layerremove<br>
+
+        2.地图状态改变事件 <br>
+        load,upload,move,zoom,zoomed,moveed,resize等<br>
+
+        3.弹出框事件 <br>
+        popupopen,popupclose，autopanstart<br>
+
+        4.交互事件 <br>
+        click,dbclick,mousedown,mouseup,mouseover,mouseout,mousemove,keypress等 <br>
+    </div>
+    <script type="text/javascript">
+        var map = new L.Map('map');
+        var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        var osm = new L.TileLayer(osmUrl, {
+            minZoom: 1,
+            maxZoom: 18
+        });
+        map.addLayer(osm);
+        map.setView(new L.LatLng(31.864942016, 117.2882028929), 11);
+
+        map.on('zoom', zoomEvent);
+
+        function zoomEvent(e) {
+            console.log(e)
+            alert(e.target.getZoom() + "级")
+        }
+    </script>
 </body>
 
 </html></div></div><div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQwMC8xMzkzNA"><script>(function(d, s) {
