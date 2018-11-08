@@ -12,68 +12,172 @@
   s.parentNode.insertBefore(hm, s);
   })();
   </script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">狗敦A季</h1><a id="logo" href="/.">狗敦A季</a><p class="description">贾宛龙的个人博客</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a class="current" href="/demo/"><i class="fa fa-archive"> DEMO</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-content"><!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>文字标注</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./lib/leaflet.css">
+    <link rel="stylesheet" href="./lib/iclient9-leaflet.min.css">
+    <link rel="stylesheet" href="./lib/leaflet-measure-path.css">
     <style>
-        #map
-        {
-            width:1000px;
-            height:1000px;
-        }
-        .my-div-icon{
-            font-size:15px;
-            background:red;
-            color:#fff;
-        }
-        .anim-tooltip{
-            transition: opacity 4.0s linear;/*动画效果*/
-            font:italic bold 12px/30px arial,sans-serif;
-            font-family:"Times New Roman",Georgia,Serif;
+        * {
+            margin: 0;
+            padding: 0;
         }
 
+        html,
+        body,
+        #map {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        ul {
+            position: absolute;
+            top: 80px;
+            left: 10px;
+            z-index: 1000;
+        }
+
+        li {
+            list-style: none;
+            cursor: pointer;
+        }
     </style>
-    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 </head>
 
 <body>
-    <div id="map"></div>
-    <script type="text/javascript">
-        var map = new L.Map('map');
-        var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-        var osm = new L.TileLayer(osmUrl, {
-            minZoom: 1,
-            maxZoom: 18
-        });
-        map.addLayer(osm);
-        map.setView(new L.LatLng(31.864942016, 117.2882028929), 11);
-        var myIcon = L.divIcon({
-            html: "狗子",
-            className: 'my-div-icon',
-            iconSize: 30
-        });
+    <div id="map">
 
-
-        var marker = L.marker([31.2, 114.5], {
-                // icon:myIcon
-            }).addTo(map)
-            // 设置label
-            .bindTooltip("This is a test.", {
-                permanent: true,
-                offset: [0, 0], // 偏移
-                direction: "right", // 放置位置
-                // sticky:true,//是否标记在点上面
-                className: 'anim-tooltip', // CSS控制
-            }).openTooltip();
-
-        L.marker([31.864942016, 117.2882028929], {
-            icon: myIcon
-        }).addTo(map);
-    </script>
+    </div>
+    <ul>
+        <li>
+            <img onclick="draw('line')" src="./lib/line.png" alt="" srcset="">
+        </li>
+        <li>
+            <img onclick="draw('area')" src="./lib/area.png" alt="" srcset="">
+        </li>
+    </ul>
 </body>
+<script src="./lib/leaflet.js"></script>
+<script src="./lib/iclient9-leaflet.min.js"></script>
+<script src="./lib/Leaflet.Editable.js"></script>
+<script src="./lib/leaflet-measure-path.js"></script>
+<script>
+    var map = L.map('map', {
+        center: [30, 115],
+        zoom: 5,
+        crs: L.CRS.TianDiTu_WGS84
+    });
+    L.supermap.tiandituTileLayer().addTo(map);
+    L.supermap.tiandituTileLayer({
+        isLabel: true
+    }).addTo(map);
+
+    function draw(type) {
+        if (type == "line") {
+            map.on('click', onClick);
+        } else {
+            areaMeasure.init()
+        }
+    }
+    var points = []
+    var lines = new L.polyline(points)
+    var tempLines = new L.polyline([])
+    map.on('dblclick', onDoubleClick);
+
+    function onClick(e) {
+        points.push([e.latlng.lat, e.latlng.lng])
+        lines.addLatLng(e.latlng)
+        map.addLayer(lines)
+        map.addLayer(L.circle(e.latlng, {
+            color: '#ff0000',
+            fillColor: 'ff0000',
+            fillOpacity: 1
+        }))
+        map.on('mousemove', onMove) //双击地图
+    }
+
+    function onMove(e) {
+        if (points.length > 0) {
+            ls = [points[points.length - 1],
+                [e.latlng.lat, e.latlng.lng]
+            ]
+            tempLines.setLatLngs(ls)
+            map.addLayer(tempLines)
+        }
+    }
+
+    function onDoubleClick(e) {
+        L.polyline(points, {
+            showMeasurements: true
+        }).addTo(map)
+        points = []
+        lines = new L.polyline(points)
+        map.off('mousemove')
+        map.off('click')
+    }
+
+    // 面积测量方法
+    var areaMeasure = {
+        points: [],
+        color: "red",
+        layers: L.layerGroup(),
+        polygon: null,
+        init: function () {
+            areaMeasure.points = [];
+            areaMeasure.polygon = null;
+            map.on('click', areaMeasure.click).on('dblclick', areaMeasure.dblclick);
+        },
+        close: function () {
+            var lab = rectangleMeasure.tips.getLabel();
+            var tt = document.createTextNode(rectangleMeasure.tips.getLabel()._content);
+            lab._container.innerHTML = "";
+            lab._container.appendChild(tt);
+            var span = document.createElement("span");
+            span.innerHTML = "【关闭】";
+            span.style.color = "#00ff40";
+            lab._container.appendChild(span);
+            L.DomEvent.addListener(span, "click", function () {
+                rectangleMeasure.destory();
+            });
+        },
+        click: function (e) {
+            map.doubleClickZoom.disable();
+            // 添加点信息
+            areaMeasure.points.push(e.latlng);
+            // 添加面
+            map.on('mousemove', areaMeasure.mousemove);
+        },
+        mousemove: function (e) {
+            areaMeasure.points.push(e.latlng);
+            if (areaMeasure.polygon)
+                map.removeLayer(areaMeasure.polygon);
+            areaMeasure.polygon = L.polygon(areaMeasure.points, {
+                showMeasurements: true,
+                color: 'red'
+            });
+            // areaMeasure.polygon.addTo(map);
+            areaMeasure.polygon.addTo(areaMeasure.layers);
+            areaMeasure.layers.addTo(map);
+            areaMeasure.points.pop();
+        },
+        dblclick: function (e) { // 双击结束
+            areaMeasure.polygon.addTo(areaMeasure.layers);
+            areaMeasure.polygon.enableEdit();
+            map.on('editable:vertex:drag editable:vertex:deleted', areaMeasure.polygon.updateMeasurements,
+                areaMeasure.polygon);
+            map.off('click', areaMeasure.click).off('mousemove', areaMeasure.mousemove).off('dblclick',
+                areaMeasure.dblclick);
+        },
+        destory: function () {
+
+        }
+    }
+
+</script>
 
 </html></div></div><div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQwMC8xMzkzNA"><script>(function(d, s) {
    var j, e = d.getElementsByTagName(s)[0];
