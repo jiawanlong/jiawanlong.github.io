@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jiawanlong.github.io/"/>
-  <updated>2018-11-19T03:04:23.593Z</updated>
+  <updated>2018-12-24T09:54:44.378Z</updated>
   <id>https://jiawanlong.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6第一课、let和const命令</title>
+    <link href="https://jiawanlong.github.io/2018/12/24/ES6%E7%AC%AC%E4%B8%80%E8%AF%BE%E3%80%81let%E5%92%8Cconst%E5%91%BD%E4%BB%A4/"/>
+    <id>https://jiawanlong.github.io/2018/12/24/ES6第一课、let和const命令/</id>
+    <published>2018-12-24T09:53:56.193Z</published>
+    <updated>2018-12-24T09:54:44.378Z</updated>
+    
+    <content type="html"><![CDATA[<p>[TOC]</p><h2 id="2-1、let命令"><a href="#2-1、let命令" class="headerlink" title="2.1、let命令"></a>2.1、let命令</h2><h3 id="2-1-1-基本用法"><a href="#2-1-1-基本用法" class="headerlink" title="2.1.1 基本用法"></a>2.1.1 基本用法</h3><p>所声明的变量，只在let命令所在的代码块内有效。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 0; i &lt; 10; i++) &#123;&#125;</span><br><span class="line">console.log(i);</span><br><span class="line">// ReferenceError: i is not defined</span><br></pre></td></tr></table></figure></p><h3 id="2-1-2-不存在变量提升"><a href="#2-1-2-不存在变量提升" class="headerlink" title="2.1.2 不存在变量提升"></a>2.1.2 不存在变量提升</h3><p>var命令会发生“变量提升”现象，即变量可以在声明之前使用，值为undefined<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// var 的情况</span><br><span class="line">console.log(foo); // 输出undefined</span><br><span class="line">var foo = 2;</span><br><span class="line"></span><br><span class="line">// let 的情况</span><br><span class="line">console.log(bar); // 报错ReferenceError</span><br><span class="line">let bar = 2;</span><br></pre></td></tr></table></figure></p><h3 id="2-1-3-暂时性死区"><a href="#2-1-3-暂时性死区" class="headerlink" title="2.1.3 暂时性死区"></a>2.1.3 暂时性死区</h3><p>暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">  // 暂时性死区开始</span><br><span class="line">  tmp = &apos;abc&apos;; // ReferenceError</span><br><span class="line">  console.log(tmp); // ReferenceError</span><br><span class="line"></span><br><span class="line">  let tmp; // 暂时性死区结束</span><br><span class="line">  console.log(tmp); // undefined</span><br><span class="line"></span><br><span class="line">  tmp = 123;</span><br><span class="line">  console.log(tmp); // 123</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="2-1-4-不允许重复声明"><a href="#2-1-4-不允许重复声明" class="headerlink" title="2.1.4 不允许重复声明"></a>2.1.4 不允许重复声明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 报错</span><br><span class="line">function func() &#123;</span><br><span class="line">  let a = 10;</span><br><span class="line">  var a = 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 报错</span><br><span class="line">function func() &#123;</span><br><span class="line">  let a = 10;</span><br><span class="line">  let a = 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="2-2、块级作用域"><a href="#2-2、块级作用域" class="headerlink" title="2.2、块级作用域"></a>2.2、块级作用域</h2><h3 id="2-2-1、为什么需要块级作用域？"><a href="#2-2-1、为什么需要块级作用域？" class="headerlink" title="2.2.1、为什么需要块级作用域？"></a>2.2.1、为什么需要块级作用域？</h3><p>1、变量i只用来控制循环，但是循环结束后，它并没有消失，泄露成了全局变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var s = &apos;hello&apos;;</span><br><span class="line">for (var i = 0; i &lt; s.length; i++) &#123;</span><br><span class="line">  console.log(s[i]);</span><br><span class="line">&#125;</span><br><span class="line">console.log(i); // 5</span><br></pre></td></tr></table></figure></p><p>2、内层变量可能会覆盖外层变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var tmp = new Date();</span><br><span class="line">function f() &#123;</span><br><span class="line">  console.log(tmp);</span><br><span class="line">  if (false) &#123;</span><br><span class="line">    var tmp = &apos;hello world&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">f(); // undefined</span><br></pre></td></tr></table></figure></p><h3 id="2-2-2、ES6-的块级作用域"><a href="#2-2-2、ES6-的块级作用域" class="headerlink" title="2.2.2、ES6 的块级作用域"></a>2.2.2、ES6 的块级作用域</h3><p>函数有两个代码块，都声明了变量n，运行后输出 5。这表示外层代码块不受内层代码块的影响。如果两次都使用var定义变量n，最后输出的值才是 10<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function f1() &#123;</span><br><span class="line">  let n = 5;</span><br><span class="line">  if (true) &#123;</span><br><span class="line">    let n = 10;</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(n); // 5</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>外层作用域无法读取内层作用域的变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;&#123;&#123;</span><br><span class="line">  &#123;let insane = &apos;Hello World&apos;&#125;</span><br><span class="line">  console.log(insane); // 报错</span><br><span class="line">&#125;&#125;&#125;&#125;;</span><br></pre></td></tr></table></figure></p><p>内层作用域<strong>可以</strong>定义外层作用域的同名变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;&#123;&#123;</span><br><span class="line">  let insane = &apos;Hello World&apos;;</span><br><span class="line">  &#123;let insane = &apos;Hello World&apos;&#125;</span><br><span class="line">&#125;&#125;&#125;&#125;;</span><br></pre></td></tr></table></figure></p><p>块级作用域的出现，实际上使得获得广泛应用的立即执行函数表达式（IIFE）不再必要了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// IIFE 写法</span><br><span class="line">(function () &#123;</span><br><span class="line">  var tmp = ...;</span><br><span class="line">  ...</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line">// 块级作用域写法</span><br><span class="line">&#123;</span><br><span class="line">  let tmp = ...;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="2-3、const-命令"><a href="#2-3、const-命令" class="headerlink" title="2.3、const 命令"></a>2.3、const 命令</h2><p>const声明一个只读的常量。一旦声明，常量的值就不能改变。<br>const一旦声明变量，就必须立即初始化，不能留到以后赋值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const foo;</span><br><span class="line">// SyntaxError: Missing initializer in const declaration</span><br><span class="line"></span><br><span class="line">const PI = 3.1415;</span><br><span class="line">PI // 3.1415</span><br><span class="line">PI = 3; // TypeError: Assignment to constant variable.</span><br></pre></td></tr></table></figure></p><p>const的作用域与let命令相同：只在声明所在的块级作用域内有效。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">  const MAX = 5;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MAX // Uncaught ReferenceError: MAX is not defined</span><br></pre></td></tr></table></figure></p><h2 id="2-4、ES6-声明变量的六种方法"><a href="#2-4、ES6-声明变量的六种方法" class="headerlink" title="2.4、ES6 声明变量的六种方法"></a>2.4、ES6 声明变量的六种方法</h2><p>ES5 只有两种声明变量的方法：var命令和function命令。ES6 除了添加let和const命令，另外两种声明变量的方法：import命令和class命令。</p><h2 id="2-5、顶层对象和全局变量"><a href="#2-5、顶层对象和全局变量" class="headerlink" title="2.5、顶层对象和全局变量"></a>2.5、顶层对象和全局变量</h2><p>var命令和function命令声明的全局变量，依旧是顶层对象的属性。<br>let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">window.a // 1</span><br><span class="line"></span><br><span class="line">let b = 1;</span><br><span class="line">window.b // undefined</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;2-1、let命令&quot;&gt;&lt;a href=&quot;#2-1、let命令&quot; class=&quot;headerlink&quot; title=&quot;2.1、let命令&quot;&gt;&lt;/a&gt;2.1、let命令&lt;/h2&gt;&lt;h3 id=&quot;2-1-1-基本用法&quot;&gt;&lt;a href=&quot;#2-
+      
+    
+    </summary>
+    
+      <category term="FUCK WORK" scheme="https://jiawanlong.github.io/categories/FUCK-WORK/"/>
+    
+    
+      <category term="ES6" scheme="https://jiawanlong.github.io/tags/ES6/"/>
+    
+      <category term="let const" scheme="https://jiawanlong.github.io/tags/let-const/"/>
+    
+  </entry>
   
   <entry>
     <title>我爱这被风带走不会再有的每一天</title>
@@ -40,9 +68,9 @@
       <category term="GREAT LIFE" scheme="https://jiawanlong.github.io/categories/GREAT-LIFE/"/>
     
     
-      <category term="生活" scheme="https://jiawanlong.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
-    
       <category term="我爱这被风带走不会再有的每一天" scheme="https://jiawanlong.github.io/tags/%E6%88%91%E7%88%B1%E8%BF%99%E8%A2%AB%E9%A3%8E%E5%B8%A6%E8%B5%B0%E4%B8%8D%E4%BC%9A%E5%86%8D%E6%9C%89%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9/"/>
+    
+      <category term="生活" scheme="https://jiawanlong.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -332,9 +360,9 @@
       <category term="GREAT LIFE" scheme="https://jiawanlong.github.io/categories/GREAT-LIFE/"/>
     
     
-      <category term="别，千万别" scheme="https://jiawanlong.github.io/tags/%E5%88%AB%EF%BC%8C%E5%8D%83%E4%B8%87%E5%88%AB/"/>
-    
       <category term="生活" scheme="https://jiawanlong.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="别，千万别" scheme="https://jiawanlong.github.io/tags/%E5%88%AB%EF%BC%8C%E5%8D%83%E4%B8%87%E5%88%AB/"/>
     
   </entry>
   
