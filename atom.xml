@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jiawanlong.github.io/"/>
-  <updated>2019-06-05T09:52:13.441Z</updated>
+  <updated>2019-09-29T02:10:47.574Z</updated>
   <id>https://jiawanlong.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webpack打包路径问题</title>
+    <link href="https://jiawanlong.github.io/2019/09/29/webpack%E6%89%93%E5%8C%85%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://jiawanlong.github.io/2019/09/29/webpack打包路径问题/</id>
+    <published>2019-09-29T02:03:29.222Z</published>
+    <updated>2019-09-29T02:10:47.574Z</updated>
+    
+    <content type="html"><![CDATA[<p>利用vue脚手架生成的代码去打包的时候，通常会发现，css路径丢失的问题。同时如果用了elementui的话，还可能出现字体丢失的情况，通常需要自己手动的将字体文件拷贝到指定的文件夹才能解决问题，但是这样的话，太影响效率。所以需要配置webpack去解决问题。</p><h3 id="css路径丢失的解决方法"><a href="#css路径丢失的解决方法" class="headerlink" title="css路径丢失的解决方法"></a>css路径丢失的解决方法</h3><p>将config下面的index.js的build下的assetsPublicPath加一个<code>./</code>即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">build: &#123;</span><br><span class="line">    index: path.resolve(__dirname, &apos;../dist/index.html&apos;),</span><br><span class="line">    assetsRoot: path.resolve(__dirname, &apos;../dist&apos;),</span><br><span class="line">    assetsSubDirectory: &apos;static&apos;,</span><br><span class="line">    assetsPublicPath: &apos;./&apos;,   //添加./</span><br><span class="line">    productionSourceMap: true,</span><br><span class="line">    devtool: &apos;#source-map&apos;,</span><br><span class="line">    productionGzip: false,</span><br><span class="line">    productionGzipExtensions: [&apos;js&apos;, &apos;css&apos;],</span><br><span class="line">    bundleAnalyzerReport: process.env.npm_config_report</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="elementui-字体路径丢失的解决方法"><a href="#elementui-字体路径丢失的解决方法" class="headerlink" title="elementui 字体路径丢失的解决方法"></a>elementui 字体路径丢失的解决方法</h3><p>将build下utils.js下加publicPath即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if (options.extract) &#123;</span><br><span class="line">  return ExtractTextPlugin.extract(&#123;</span><br><span class="line">    use: loaders,</span><br><span class="line">    fallback: &apos;vue-style-loader&apos;,</span><br><span class="line">    publicPath: &apos;../../&apos;     //添加publicPath属性</span><br><span class="line">  &#125;)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  return [&apos;vue-style-loader&apos;].concat(loaders)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;利用vue脚手架生成的代码去打包的时候，通常会发现，css路径丢失的问题。同时如果用了elementui的话，还可能出现字体丢失的情况，通常需要自己手动的将字体文件拷贝到指定的文件夹才能解决问题，但是这样的话，太影响效率。所以需要配置webpack去解决问题。&lt;/p&gt;
+&lt;h
+      
+    
+    </summary>
+    
+      <category term="FUCK WORK" scheme="https://jiawanlong.github.io/categories/FUCK-WORK/"/>
+    
+    
+      <category term="vue" scheme="https://jiawanlong.github.io/tags/vue/"/>
+    
+      <category term="webpack" scheme="https://jiawanlong.github.io/tags/webpack/"/>
+    
+      <category term="elementui" scheme="https://jiawanlong.github.io/tags/elementui/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript：前端面试知识点目录整理</title>
@@ -345,9 +375,9 @@
       <category term="GREAT LIFE" scheme="https://jiawanlong.github.io/categories/GREAT-LIFE/"/>
     
     
-      <category term="生活" scheme="https://jiawanlong.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
-    
       <category term="我爱这被风带走不会再有的每一天" scheme="https://jiawanlong.github.io/tags/%E6%88%91%E7%88%B1%E8%BF%99%E8%A2%AB%E9%A3%8E%E5%B8%A6%E8%B5%B0%E4%B8%8D%E4%BC%9A%E5%86%8D%E6%9C%89%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9/"/>
+    
+      <category term="生活" scheme="https://jiawanlong.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -486,11 +516,11 @@
       <category term="FUCK WORK" scheme="https://jiawanlong.github.io/categories/FUCK-WORK/"/>
     
     
+      <category term="GIS" scheme="https://jiawanlong.github.io/tags/GIS/"/>
+    
       <category term="supermap专题图" scheme="https://jiawanlong.github.io/tags/supermap%E4%B8%93%E9%A2%98%E5%9B%BE/"/>
     
       <category term="专题图" scheme="https://jiawanlong.github.io/tags/%E4%B8%93%E9%A2%98%E5%9B%BE/"/>
-    
-      <category term="GIS" scheme="https://jiawanlong.github.io/tags/GIS/"/>
     
   </entry>
   
@@ -515,13 +545,13 @@
       <category term="FUCK WORK" scheme="https://jiawanlong.github.io/categories/FUCK-WORK/"/>
     
     
-      <category term="GIS" scheme="https://jiawanlong.github.io/tags/GIS/"/>
-    
       <category term="Leaflet" scheme="https://jiawanlong.github.io/tags/Leaflet/"/>
     
       <category term="热力图" scheme="https://jiawanlong.github.io/tags/%E7%83%AD%E5%8A%9B%E5%9B%BE/"/>
     
       <category term="聚合图" scheme="https://jiawanlong.github.io/tags/%E8%81%9A%E5%90%88%E5%9B%BE/"/>
+    
+      <category term="GIS" scheme="https://jiawanlong.github.io/tags/GIS/"/>
     
   </entry>
   
@@ -556,33 +586,6 @@
       <category term="sea.js" scheme="https://jiawanlong.github.io/tags/sea-js/"/>
     
       <category term="es6" scheme="https://jiawanlong.github.io/tags/es6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>组件通讯</title>
-    <link href="https://jiawanlong.github.io/2018/07/05/%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/"/>
-    <id>https://jiawanlong.github.io/2018/07/05/组件通讯/</id>
-    <published>2018-07-05T09:31:22.649Z</published>
-    <updated>2018-07-05T09:32:03.281Z</updated>
-    
-    <content type="html"><![CDATA[<p>组件是vue最主要的语法特性之一，组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素， Vue.js 的编译器为它添加特殊功能。在 Vue 里，一个组件本质上是一个拥有预定义选项的一个 Vue 实例。<br>只有把各组件的通讯运用的游刃有余，才能说自己已经入门了，不是吗？</p><h3 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h3><h4 id="1、子组件调用父组件的方法"><a href="#1、子组件调用父组件的方法" class="headerlink" title="1、子组件调用父组件的方法"></a>1、子组件调用父组件的方法</h4><ul><li>直接用this.$parent.xxxx这样直接调用父组件的方法。</li><li>用$emit向父组件触发一个事件，父组件监听这个事件就行了。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//父组件</span><br><span class="line">&lt;child @refreshList=&quot;onRefresList&quot;&gt;&lt;/child&gt;  </span><br><span class="line">onRefresList(data)&#123;</span><br><span class="line">    console.log(data);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//子组件 </span><br><span class="line">this.$emit(&apos;refreshList&apos;,data);</span><br></pre></td></tr></table></figure></li></ul><h4 id="2、父组件调用子组件的方法"><a href="#2、父组件调用子组件的方法" class="headerlink" title="2、父组件调用子组件的方法"></a>2、父组件调用子组件的方法</h4><ul><li>用this.$children，但得到是一个数组，包含所有的子组件，可通过属性判断</li><li>通过ref调用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//父组件</span><br><span class="line">&lt;coma :das=&quot;da&quot; ref=&quot;comA&quot;&gt;&lt;/coma&gt;   //子</span><br><span class="line">this.$refs.comA.say(&quot;data&quot;);  //调用子的事件，并传值过去</span><br><span class="line">this.$refs.comA.val++;  //改变子的值</span><br><span class="line"></span><br><span class="line">//子组件</span><br><span class="line">say(data)&#123;</span><br><span class="line">    console.log(data);</span><br><span class="line">    alert(&quot;父调用我的&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h4 id="3、兄弟组件调用方法"><a href="#3、兄弟组件调用方法" class="headerlink" title="3、兄弟组件调用方法"></a>3、兄弟组件调用方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//mian.js</span><br><span class="line">window.EventBus = new Vue();</span><br><span class="line"></span><br><span class="line">//兄弟1（调用者）</span><br><span class="line">EventBus.$emit(&quot;setVal&quot;, data);</span><br><span class="line"></span><br><span class="line">//兄弟2（被调用者）</span><br><span class="line">//mounted()钩子中监听</span><br><span class="line">bus.$on(&apos;setVal&apos;, (data) =&gt; &#123;</span><br><span class="line">    console.log(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="数据传递"><a href="#数据传递" class="headerlink" title="数据传递"></a>数据传递</h3><h4 id="1、父组件传子组件"><a href="#1、父组件传子组件" class="headerlink" title="1、父组件传子组件"></a>1、父组件传子组件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//父组件</span><br><span class="line">&lt;child :inputName=&quot;name&quot;&gt;&lt;/child&gt;  //name是父组件的data里的值</span><br><span class="line">&lt;child inputName=&quot;name&quot;&gt;&lt;/child&gt;  //name是一个字符串</span><br><span class="line"></span><br><span class="line">//子组件</span><br><span class="line">props: [&quot;inputName&quot;,&quot;head&quot;]</span><br><span class="line">传过来的值不能在data里出现，不能修改，拿到后应用变量存着，其他来操作变量</span><br><span class="line"></span><br><span class="line">//子组件传过来验证、有默认值</span><br><span class="line">props: &#123;</span><br><span class="line">    &apos;head&apos;: Object,</span><br><span class="line">    &apos;pagecount&apos;: &#123;</span><br><span class="line">        default: 5,</span><br><span class="line">        type: Number  //String Number Boolean Function Object Array Symbol</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="2、子组件传父组件和兄弟组件传值用调用方法解决"><a href="#2、子组件传父组件和兄弟组件传值用调用方法解决" class="headerlink" title="2、子组件传父组件和兄弟组件传值用调用方法解决"></a>2、子组件传父组件和兄弟组件传值用调用方法解决</h4>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;组件是vue最主要的语法特性之一，组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素， Vue.js 的编译器为它添加特殊功能。在 Vue 里，一个组件本质上是一个拥有预定义选项的一个 Vue 实例。&lt;br&gt;只有把各组件的通讯运用的游刃有余，才能
-      
-    
-    </summary>
-    
-      <category term="FUCK WORK" scheme="https://jiawanlong.github.io/categories/FUCK-WORK/"/>
-    
-    
-      <category term="vue" scheme="https://jiawanlong.github.io/tags/vue/"/>
-    
-      <category term="组件" scheme="https://jiawanlong.github.io/tags/%E7%BB%84%E4%BB%B6/"/>
     
   </entry>
   
