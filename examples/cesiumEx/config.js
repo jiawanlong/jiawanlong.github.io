@@ -311,6 +311,12 @@ var exampleConfig = {
                         thumbnail: "2.3.13、气泡弹窗.png",
                         fileName: "2.3.13、气泡弹窗"
                     },
+                    {
+                        name: "2.3.14、道路",
+                        name_en: "2.3.14、道路",
+                        thumbnail: "2.3.14、道路.png",
+                        fileName: "2.3.14、道路"
+                    },
                 ]
             },
             "map4": {
@@ -455,7 +461,7 @@ var exampleConfig = {
                         thumbnail: "4.1.9、剖面分析.png",
                         fileName: "4.1.9、剖面分析"
                     },
-                    
+
                 ]
             },
             "map6": {
@@ -468,7 +474,7 @@ var exampleConfig = {
                         thumbnail: "4.2.1、量算工具.png",
                         fileName: "4.2.1、量算工具"
                     },
-                    
+
                 ]
             },
             "map7": {
@@ -481,7 +487,48 @@ var exampleConfig = {
                         thumbnail: "4.3.1、视频纹理.png",
                         fileName: "4.3.1、视频纹理"
                     },
-                    
+                    {
+                        name: "4.3.2、视频投射",
+                        name_en: "4.3.2、视频投射",
+                        thumbnail: "4.3.2、视频投射.png",
+                        fileName: "4.3.2、视频投射"
+                    },
+                ]
+            },
+        }
+    },
+    "Elasticsearch": {
+        name: "5、特效",
+        name_en: "5、特效",
+        content: {
+            "map5": {
+                name: "5.1、场景特效",
+                name_en: "5.1、场景特效",
+                content: [
+                    {
+                        name: "5.1.1、雨雪雾",
+                        name_en: "5.1.1、雨雪雾",
+                        thumbnail: "5.1.1、雨雪雾.png",
+                        fileName: "5.1.1、雨雪雾"
+                    },
+                    {
+                        name: "5.1.2、天空盒",
+                        name_en: "5.1.2、天空盒",
+                        thumbnail: "5.1.2、天空盒.png",
+                        fileName: "5.1.2、天空盒"
+                    },
+                    {
+                        name: "5.1.3、近地天空盒",
+                        name_en: "5.1.3、近地天空盒",
+                        thumbnail: "5.1.3、近地天空盒.png",
+                        fileName: "5.1.3、近地天空盒"
+                    },
+                    {
+                        name: "5.1.4、背景图",
+                        name_en: "5.1.4、背景图",
+                        thumbnail: "5.1.4、背景图.png",
+                        fileName: "5.1.4、背景图"
+                    },
                 ]
             },
         }
