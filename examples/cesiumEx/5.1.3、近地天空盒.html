@@ -26,36 +26,36 @@
         });
         viewer.scene.debugShowFramesPerSecond = true;
         viewer.scene.globe.depthTestAgainstTerrain = true;
-      
+
         viewer.camera.setView({
-        destination: Cesium.Cartesian3.fromDegrees(-95.166493, 39.9060534, 2000000)
-    });
+            destination: Cesium.Cartesian3.fromDegrees(-95.166493, 39.9060534, 2000000)
+        });
 
 
-    //设置天空盒
-    var skyBox = new SkyBox(viewer);
-    //天空盒
-    // skyBox.customSkyBox({
-    //     positiveX: './SkyBox/tycho2t3_80_px.jpg',
-    //     negativeX: './SkyBox/tycho2t3_80_mx.jpg',
-    //     positiveY: './SkyBox/tycho2t3_80_py.jpg',
-    //     negativeY: './SkyBox/tycho2t3_80_my.jpg',
-    //     positiveZ: './SkyBox/tycho2t3_80_pz.jpg',
-    //     negativeZ: './SkyBox/tycho2t3_80_mz.jpg'
-    // });
+        //设置天空盒
+        var skyBox = new SkyBox(viewer);
+        //天空盒
+        // skyBox.customSkyBox({
+        //     positiveX: './SkyBox/tycho2t3_80_px.jpg',
+        //     negativeX: './SkyBox/tycho2t3_80_mx.jpg',
+        //     positiveY: './SkyBox/tycho2t3_80_py.jpg',
+        //     negativeY: './SkyBox/tycho2t3_80_my.jpg',
+        //     positiveZ: './SkyBox/tycho2t3_80_pz.jpg',
+        //     negativeZ: './SkyBox/tycho2t3_80_mz.jpg'
+        // });
 
-    
-    // //近地天空盒
-    skyBox.SkyBoxOnGround({
-        sources: {
-            positiveX: './SkyBox/Right.jpg',
-            negativeX: './SkyBox/Left.jpg',
-            positiveY: './SkyBox/Front.jpg',
-            negativeY: './SkyBox/Back.jpg',
-            positiveZ: './SkyBox/Up.jpg',
-            negativeZ: './SkyBox/Down.jpg'
-        }
-    });
+
+        // //近地天空盒
+        skyBox.SkyBoxOnGround({
+            sources: {
+                positiveX: './SkyBox/Right.jpg',
+                negativeX: './SkyBox/Left.jpg',
+                positiveY: './SkyBox/Front.jpg',
+                negativeY: './SkyBox/Back.jpg',
+                positiveZ: './SkyBox/Up.jpg',
+                negativeZ: './SkyBox/Down.jpg'
+            }
+        });
     </script>
 </body>
 

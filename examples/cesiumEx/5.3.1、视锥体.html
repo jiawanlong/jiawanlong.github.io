@@ -1,0 +1,125 @@
+<!--********************************************************************
+* by jiawanlong
+*********************************************************************-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./../../cesium/Cesium1.98/Widgets/widgets.css" />
+    <script type="text/javascript" src="./../../cesium/Cesium1.98/Cesium.js"></script>
+</head>
+
+<body style="
+      margin: 0;
+      overflow: hidden;
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+    ">
+    <div id="map" style="margin: 0 auto; width: 100%; height: 100%"></div>
+
+    <!-- ./video.mp4 -->
+    <script type="text/javascript">
+        Cesium.Ion.defaultAccessToken =
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3ZjQ5ZGUzNC1jNWYwLTQ1ZTMtYmNjYS05YTY4ZTVmN2I2MDkiLCJpZCI6MTE3MTM4LCJpYXQiOjE2NzY0NDUyODB9.ZaNSBIfc1sGLhQd_xqhiSsc0yr8oS0wt1hAo9gbke6M";
+        const viewer = new Cesium.Viewer("map", {});
+        viewer.scene.debugShowFramesPerSecond = true;
+        viewer.scene.globe.depthTestAgainstTerrain = true;
+
+        // FrustumOutlineGeometry
+        // https://www.pipipi.net/35748.html
+        // 视锥体position
+
+        // 地图视野定位
+        viewer.camera.setView({
+            destination: Cesium.Cartesian3.fromDegrees(120, 30, 2000),
+        });
+
+        // 视锥体位置
+        let origin = Cesium.Cartesian3.fromDegrees(120, 30, 100);
+
+        // 视锥体朝向
+        let heading = 0;
+        let pitch = -Math.PI / 4;
+        let roll = 0;
+        let hpr = new Cesium.HeadingPitchRoll(heading, pitch, roll);
+        let orientation = Cesium.Quaternion.fromHeadingPitchRoll(hpr);
+
+        // 视锥体本身参数
+        // 视场角：度
+        const fov = 60;
+        // 近截面的距离
+        const near = 100;
+        // 远截面的距离
+        const far = 500;
+        // 平面的宽高比
+        const aspectRatio = 0.4;
+
+        addFrustum(origin, orientation, fov, near, far, aspectRatio);
+
+        // 创建视锥体及轮廓线
+        function addFrustum(position, orientation, fov, near, far, aspectRatio) {
+            let frustum = new Cesium.PerspectiveFrustum({
+                // 查看的视场角，绕Z轴旋转，以弧度方式输入
+                // fov: Cesium.Math.PI_OVER_THREE,
+                fov: Cesium.Math.toRadians(fov),
+                // 视锥体的宽度/高度
+                aspectRatio: aspectRatio,
+                // 近面距视点的距离
+                near: near,
+                // 远面距视点的距离
+                far: far,
+            });
+            let instanceGeo = new Cesium.GeometryInstance({
+                geometry: new Cesium.FrustumGeometry({
+                    frustum: frustum,
+                    origin: position,
+                    orientation: orientation,
+                    vertexFormat: Cesium.VertexFormat.POSITION_ONLY,
+                }),
+                attributes: {
+                    color: Cesium.ColorGeometryInstanceAttribute.fromColor(
+                        new Cesium.Color(1.0, 0.0, 0.0, 0.3)
+                    ),
+                },
+            });
+            let instanceGeoLine = new Cesium.GeometryInstance({
+                geometry: new Cesium.FrustumOutlineGeometry({
+                    frustum: frustum,
+                    origin: position,
+                    orientation: orientation,
+                }),
+                attributes: {
+                    color: Cesium.ColorGeometryInstanceAttribute.fromColor(
+                        new Cesium.Color(1.0, 1.0, 1.0, 1)
+                    ),
+                },
+            });
+
+            let primitive = new Cesium.Primitive({
+                geometryInstances: [instanceGeo],
+                appearance: new Cesium.PerInstanceColorAppearance({
+                    closed: true,
+                    flat: true,
+                }),
+                asynchronous: false,
+            });
+
+            let primitive1 = new Cesium.Primitive({
+                geometryInstances: [instanceGeoLine],
+                appearance: new Cesium.PerInstanceColorAppearance({
+                    closed: true,
+                    flat: true,
+                }),
+                asynchronous: false,
+            });
+            viewer.scene.primitives.add(primitive);
+            viewer.scene.primitives.add(primitive1);
+        }
+    </script>
+</body>
+
+</html>

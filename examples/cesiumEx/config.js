@@ -203,6 +203,12 @@ var exampleConfig = {
                     thumbnail: "1.12、加载mvt.png",
                     fileName: "1.12、加载mvt"
                 },
+                {
+                    name: "2.1.12、高德、百度等并纠偏",
+                    name_en: "2.1.12、高德、百度等并纠偏",
+                    thumbnail: "2.1.12、高德、百度等并纠偏.png",
+                    fileName: "2.1.12、高德、百度等并纠偏"
+                },
                 ]
             },
             "map2": {
@@ -317,6 +323,18 @@ var exampleConfig = {
                         thumbnail: "2.3.14、道路.png",
                         fileName: "2.3.14、道路"
                     },
+                    {
+                        name: "2.3.15、canvas",
+                        name_en: "2.3.15、canvas",
+                        thumbnail: "2.3.15、canvas.png",
+                        fileName: "2.3.15、canvas"
+                    },
+                    {
+                        name: "2.3.16、gif",
+                        name_en: "2.3.16、gif",
+                        thumbnail: "2.3.16、gif.png",
+                        fileName: "2.3.16、gif"
+                    },
                 ]
             },
             "map4": {
@@ -395,6 +413,12 @@ var exampleConfig = {
                         thumbnail: "3.1.5、customShader自定义材质2.png",
                         fileName: "3.1.5、customShader自定义材质2"
                     },
+                    {
+                        name: "3.1.6、点击获取属性",
+                        name_en: "3.1.6、点击获取属性",
+                        thumbnail: "3.1.6、点击获取属性.png",
+                        fileName: "3.1.6、点击获取属性"
+                    },
                 ]
             },
         }
@@ -461,7 +485,18 @@ var exampleConfig = {
                         thumbnail: "4.1.9、剖面分析.png",
                         fileName: "4.1.9、剖面分析"
                     },
-
+                    {
+                        name: "4.1.10、水域面",
+                        name_en: "4.1.10、水域面",
+                        thumbnail: "4.1.10、水域面.png",
+                        fileName: "4.1.10、水域面"
+                    },
+                    {
+                        name: "4.1.11、单体化",
+                        name_en: "4.1.11、单体化",
+                        thumbnail: "4.1.11、单体化.png",
+                        fileName: "4.1.11、单体化"
+                    },
                 ]
             },
             "map6": {
@@ -528,6 +563,36 @@ var exampleConfig = {
                         name_en: "5.1.4、背景图",
                         thumbnail: "5.1.4、背景图.png",
                         fileName: "5.1.4、背景图"
+                    },
+                ]
+            },
+            "map6": {
+                name: "5.2、回调相关",
+                name_en: "5.2、回调相关",
+                content: [
+                    {
+                        name: "5.2.1、示例1",
+                        name_en: "5.2.1、示例1",
+                        thumbnail: "5.2.1、示例1.png",
+                        fileName: "5.2.1、示例1"
+                    },
+                ]
+            },
+            "map7": {
+                name: "5.3、特殊形状",
+                name_en: "5.3、特殊形状",
+                content: [
+                    {
+                        name: "5.3.1、视锥体",
+                        name_en: "5.3.1、视锥体",
+                        thumbnail: "5.3.1、视锥体.png",
+                        fileName: "5.3.1、视锥体"
+                    },
+                    {
+                        name: "5.3.2、手动视锥体",
+                        name_en: "5.3.2、手动视锥体",
+                        thumbnail: "5.3.2、手动视锥体.png",
+                        fileName: "5.3.2、手动视锥体"
                     },
                 ]
             },

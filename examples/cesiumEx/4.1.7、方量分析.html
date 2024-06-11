@@ -40,11 +40,11 @@
         <p>
             基准面高 <input id="txtHeight" type="text"><br>
             围墙底高 <input id="txtMinHeight" type="text"> <br>
-            围墙顶高<input id="txtMaxHeight" type="text">(墙显示效果，与结算结果无关) 
+            围墙顶高<input id="txtMaxHeight" type="text">(墙显示效果，与结算结果无关)
         </p>
         <p>
             1. 挖方量: 计算“基准面”到地表之间的凸出部分进行挖掉的体积。 <br>
-            2. 填方量：计算“基准面”与“墙底部”之间的缺少部分进行填平的体积。 
+            2. 填方量：计算“基准面”与“墙底部”之间的缺少部分进行填平的体积。
         </p>
     </div>
     <script type="text/javascript">
@@ -83,9 +83,9 @@
 
         function tz() {
             measureVolume.setParameters({
-                planeHeight:  Number($('#txtHeight').val()), //基准面高
-                wallMinHeight:  Number($('#txtMinHeight').val()), //围墙底高
-                wallMaxHeight:  Number($('#txtMaxHeight').val()), //围墙顶高 围墙顶高只是展示效果，与计算结果无关。
+                planeHeight: Number($('#txtHeight').val()), //基准面高
+                wallMinHeight: Number($('#txtMinHeight').val()), //围墙底高
+                wallMaxHeight: Number($('#txtMaxHeight').val()), //围墙顶高 围墙顶高只是展示效果，与计算结果无关。
             }, (data) => {
                 console.log(data)
             })

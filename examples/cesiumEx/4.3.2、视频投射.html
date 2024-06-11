@@ -50,14 +50,14 @@
         viewer.scene.debugShowFramesPerSecond = true;
         viewer.scene.globe.depthTestAgainstTerrain = true;
         viewer.camera.setView({
-            destination:  Cesium.Cartesian3.fromDegrees(85.788705, 45.163394, 2000),
+            destination: Cesium.Cartesian3.fromDegrees(85.788705, 45.163394, 2000),
 
         });
         var options = {
             horizontalViewAngle: 60,
             verticalViewAngle: 40,
             video: "video_dom",
-            viewPosition:  Cesium.Cartesian3.fromDegrees(85.788705, 45.161394, 900),
+            viewPosition: Cesium.Cartesian3.fromDegrees(85.788705, 45.161394, 900),
             viewPositionEnd: Cesium.Cartesian3.fromDegrees(85.788705, 45.167394, 500),
         };
         v = new video(viewer, options);

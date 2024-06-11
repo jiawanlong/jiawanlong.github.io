@@ -1,0 +1,83 @@
+<!--********************************************************************
+* by jiawanlong
+*********************************************************************-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./../../cesium/Cesium1.98/Widgets/widgets.css" />
+  <script type="text/javascript" src="./../../cesium/Cesium1.98/Cesium.js"></script>
+</head>
+
+<body style="
+      margin: 0;
+      overflow: hidden;
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+    ">
+  <div id="map" style="margin: 0 auto; width: 100%; height: 100%"></div>
+
+  <script type="text/javascript">
+    Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3ZjQ5ZGUzNC1jNWYwLTQ1ZTMtYmNjYS05YTY4ZTVmN2I2MDkiLCJpZCI6MTE3MTM4LCJpYXQiOjE2NzY0NDUyODB9.ZaNSBIfc1sGLhQd_xqhiSsc0yr8oS0wt1hAo9gbke6M";
+    const viewer = new Cesium.Viewer("map", {});
+    viewer.scene.debugShowFramesPerSecond = true;
+    viewer.scene.globe.depthTestAgainstTerrain = true;
+
+    const tileset = new Cesium.Cesium3DTileset({
+      url: "./buildings/tileset.json",
+    });
+
+    tileset.readyPromise
+      .then(function (tileset) {
+        viewer.scene.primitives.add(tileset);
+        viewer.zoomTo(tileset)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    var handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+    handler.setInputAction(function (movement) {
+
+      // --------------------------获取被点击的属性----------------------
+      var pickedFeature = viewer.scene.pick(movement.position);
+      if (Cesium.defined(pickedFeature)) {
+        console.log(pickedFeature);
+        console.log(pickedFeature.getProperty("name"));
+      }
+
+      // 2、椭球面坐标（不包含地形、模型、倾斜摄影表面。）
+      var position = viewer.scene.camera.pickEllipsoid(movement.position, viewer.scene.globe.ellipsoid);
+      console.log(position);
+      // 经纬度坐标
+      var cartesian3 = new Cesium.Cartesian3(position.x, position.y, position.z)
+      var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian3);
+      var lat = Cesium.Math.toDegrees(cartographic.latitude);
+      var lng = Cesium.Math.toDegrees(cartographic.longitude);
+      console.log(lng, lat)
+
+      // 3、场景坐标（包含了地形、倾斜摄影表面、模型的坐标）
+      var position = viewer.scene.pickPosition(movement.position);
+      var cartesian3 = new Cesium.Cartesian3(position.x, position.y, position.z)
+      var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian3);
+      var lat = Cesium.Math.toDegrees(cartographic.latitude);
+      var lng = Cesium.Math.toDegrees(cartographic.longitude);
+      console.log(lng, lat)
+      // console.log(position);
+
+      // 4、地表坐标（这里是地球表面的世界坐标，包含地形，不包括模型、倾斜摄影表面。）
+      var ray = viewer.camera.getPickRay(movement.position);
+      var position = viewer.scene.globe.pick(ray, viewer.scene);
+      console.log(position);
+
+
+
+    }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+  </script>
+</body>
+
+</html>
