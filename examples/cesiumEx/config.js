@@ -209,6 +209,18 @@ var exampleConfig = {
                     thumbnail: "2.1.12、高德、百度等并纠偏.png",
                     fileName: "2.1.12、高德、百度等并纠偏"
                 },
+                {
+                    name: "2.1.13、wkt",
+                    name_en: "2.1.13、wkt",
+                    thumbnail: "2.1.13、wkt.png",
+                    fileName: "2.1.13、wkt"
+                },
+                {
+                    name: "2.1.14、shp",
+                    name_en: "2.1.14、shp",
+                    thumbnail: "2.1.14、shp.png",
+                    fileName: "2.1.14、shp"
+                },
                 ]
             },
             "map2": {
@@ -335,6 +347,13 @@ var exampleConfig = {
                         thumbnail: "2.3.16、gif.png",
                         fileName: "2.3.16、gif"
                     },
+                    {
+                        name: "2.3.17、聚合",
+                        name_en: "2.3.17、聚合",
+                        thumbnail: "2.3.17、聚合.png",
+                        fileName: "2.3.17、聚合"
+                    },
+
                 ]
             },
             "map4": {
@@ -537,14 +556,26 @@ var exampleConfig = {
         name_en: "5、特效",
         content: {
             "map5": {
-                name: "5.1、场景特效",
-                name_en: "5.1、场景特效",
+                name: "5.1、场景相关",
+                name_en: "5.1、场景相关",
                 content: [
                     {
                         name: "5.1.1、雨雪雾",
                         name_en: "5.1.1、雨雪雾",
                         thumbnail: "5.1.1、雨雪雾.png",
                         fileName: "5.1.1、雨雪雾"
+                    },
+                    {
+                        name: "5.1.1、雨雪雾Webgl2",
+                        name_en: "5.1.1、雨雪雾Webgl2",
+                        thumbnail: "5.1.1、雨雪雾Webgl2.png",
+                        fileName: "5.1.1、雨雪雾Webgl2"
+                    },
+                    {
+                        name: "5.1.1、雾Webgl2",
+                        name_en: "5.1.1、雾Webgl2",
+                        thumbnail: "5.1.1、雾Webgl2.png",
+                        fileName: "5.1.1、雾Webgl2"
                     },
                     {
                         name: "5.1.2、天空盒",
@@ -564,6 +595,17 @@ var exampleConfig = {
                         thumbnail: "5.1.4、背景图.png",
                         fileName: "5.1.4、背景图"
                     },
+                    {
+                        name: "5.1.5、二三维切换",
+                        name_en: "5.1.5、二三维切换",
+                        thumbnail: "5.1.5、二三维切换.png",
+                        fileName: "5.1.5、二三维切换"
+                    }, {
+                        name: "5.1.6、场景出图",
+                        name_en: "5.1.6、场景出图",
+                        thumbnail: "5.1.6、场景出图.png",
+                        fileName: "5.1.6、场景出图"
+                    },
                 ]
             },
             "map6": {
@@ -571,11 +613,12 @@ var exampleConfig = {
                 name_en: "5.2、回调相关",
                 content: [
                     {
-                        name: "5.2.1、示例1",
-                        name_en: "5.2.1、示例1",
-                        thumbnail: "5.2.1、示例1.png",
-                        fileName: "5.2.1、示例1"
+                        name: "5.2.1、类似回调",
+                        name_en: "5.2.1、类似回调",
+                        thumbnail: "5.2.1、类似回调.png",
+                        fileName: "5.2.1、类似回调"
                     },
+
                 ]
             },
             "map7": {
@@ -593,6 +636,78 @@ var exampleConfig = {
                         name_en: "5.3.2、手动视锥体",
                         thumbnail: "5.3.2、手动视锥体.png",
                         fileName: "5.3.2、手动视锥体"
+                    },
+                    {
+                        name: "5.3.3、移动的视锥体",
+                        name_en: "5.3.3、移动的视锥体",
+                        thumbnail: "5.3.3、移动的视锥体.png",
+                        fileName: "5.3.3、移动的视锥体"
+                    },
+                    {
+                        name: "5.3.4、圆锥体",
+                        name_en: "5.3.4、圆锥体",
+                        thumbnail: "5.3.4、圆锥体.png",
+                        fileName: "5.3.4、圆锥体"
+                    },
+                    {
+                        name: "5.3.5、立体墙",
+                        name_en: "5.3.5、立体墙",
+                        thumbnail: "5.3.5、立体墙.png",
+                        fileName: "5.3.5、立体墙"
+                    },
+                    {
+                        name: "5.3.6、曲线插值",
+                        name_en: "5.3.6、曲线插值",
+                        thumbnail: "5.3.6、曲线插值.png",
+                        fileName: "5.3.6、曲线插值"
+                    },
+                    {
+                        name: "5.3.7、圆锥体",
+                        name_en: "5.3.7、圆锥体",
+                        thumbnail: "5.3.7、圆锥体.png",
+                        fileName: "5.3.7、圆锥体"
+                    },
+                ]
+            },
+        }
+    },
+    "control": {
+        name: "6、物理引擎",
+        name_en: "6、物理引擎",
+        content: {
+            "map111": {
+                name: "6.1、ammo",
+                name_en: "6.1、ammo",
+                content: [
+                    {
+                        name: "6.1.1、车辆运动",
+                        name_en: "6.1.1、车辆运动",
+                        thumbnail: "6.1.1、车辆运动.png",
+                        fileName: "6.1.1、车辆运动"
+                    },
+                    {
+                        name: "6.1.2、转动（旗子）",
+                        name_en: "6.1.2、转动（旗子）",
+                        thumbnail: "6.1.2、转动（旗子）.png",
+                        fileName: "6.1.2、转动（旗子）"
+                    },
+                    {
+                        name: "6.1.3、转动（球）",
+                        name_en: "6.1.3、转动（球）",
+                        thumbnail: "6.1.3、转动（球）.png",
+                        fileName: "6.1.3、转动（球）"
+                    },
+                    {
+                        name: "6.1.4、撞击（软体）",
+                        name_en: "6.1.4、撞击（软体）",
+                        thumbnail: "6.1.4、撞击（软体）.png",
+                        fileName: "6.1.4、撞击（软体）"
+                    },
+                    {
+                        name: "6.1.5、撞击断裂体",
+                        name_en: "6.1.5、撞击断裂体",
+                        thumbnail: "6.1.5、撞击断裂体.png",
+                        fileName: "6.1.5、撞击断裂体"
                     },
                 ]
             },

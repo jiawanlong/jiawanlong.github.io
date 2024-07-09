@@ -51,18 +51,14 @@
             near,
             far,
             aspectRatio
-        ); 
+        );
 
         // 创建视锥体及轮廓线
         function addFrustum(position, orientation, fov, near, far, aspectRatio) {
             let frustum = new Cesium.PerspectiveFrustum({
-                // 查看的视场角，绕Z轴旋转，以弧度方式输入
                 fov: Cesium.Math.toRadians(fov),
-                // 视锥体的宽度/高度
                 aspectRatio: aspectRatio,
-                // 近面距视点的距离
                 near: near,
-                // 远面距视点的距离
                 far: far,
             });
             let instanceGeo = new Cesium.GeometryInstance({
@@ -108,8 +104,9 @@
                 }),
                 asynchronous: false,
             });
-            viewer.scene.primitives.add(primitive);
-            viewer.scene.primitives.add(primitive1);
+            // viewer.scene.primitives.add(primitive);
+            // viewer.scene.primitives.add(primitive1);
+            return [primitive,primitive1];
         }
 
         function _getOrientation(cameraPosition, position) {
