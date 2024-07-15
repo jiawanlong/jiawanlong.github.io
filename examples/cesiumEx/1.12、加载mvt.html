@@ -23,13 +23,22 @@
         // 开启帧率
         viewer.scene.debugShowFramesPerSecond = true;
 
-        // `http://10.84.251.59/geoserver/gwc/service/tms/1.0.0/jm:XZQ@EPSG:900913@pbf/{z}/{x}/{y}.pbf`,
+        // var mvtLayer = mvt.create({
+        //     url: 'https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v6/{z}/{x}/{y}.vector.pbf?access_token={k}',
+        //     key: 'pk.eyJ1IjoidHJhbXBqd2wiLCJhIjoiY2xhYXIxbHExMDN3dzN3cGliOHdrMThxMiJ9.6er2aYb1EBjSsK1-t9d2-w',
+        //     style: mvt.StreetsV6Style
+        // });
+        // viewer.imageryLayers.addImageryProvider(mvtLayer)
+
+        // 样式要修改mvt.js文件
         var mvtLayer = mvt.create({
-            url: 'https://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v6/{z}/{x}/{y}.vector.pbf?access_token={k}',
-            key: 'pk.eyJ1IjoidHJhbXBqd2wiLCJhIjoiY2xhYXIxbHExMDN3dzN3cGliOHdrMThxMiJ9.6er2aYb1EBjSsK1-t9d2-w',
+            url:'http://58.218.244.204:30080/dynamic_vector/server/maps/l081dbd44d0ce1000/tiles?type=1&z={z}&x={x}&y={y}',
             style: mvt.StreetsV6Style
         });
         viewer.imageryLayers.addImageryProvider(mvtLayer)
+        viewer.camera.setView({
+            destination: Cesium.Cartesian3.fromDegrees(111.5, 30.5, 50000.0)
+        });
 
     </script>
 </body>

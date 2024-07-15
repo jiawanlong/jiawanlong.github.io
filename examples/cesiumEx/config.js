@@ -112,6 +112,13 @@ var exampleConfig = {
                     thumbnail: "1.17、深度检测.png",
                     fileName: "1.17、深度检测"
                 },
+                {
+                    name: "1.18、echarts时间轴",
+                    name_en: "1.18、echarts时间轴",
+                    thumbnail: "1.18、echarts时间轴.png",
+                    fileName: "1.18、echarts时间轴"
+                },
+
                     // {
                     //     name: "相机",
                     //     name_en: "相机",
@@ -137,7 +144,13 @@ var exampleConfig = {
             "map1": {
                 name: "2.1、影像",
                 name_en: "2.1、影像",
-                content: [{
+                content: [
+                    {
+                        name: "2.1.0、单张图片",
+                        name_en: "2.1.0、单张图片",
+                        thumbnail: "2.1.0、单张图片.png",
+                        fileName: "2.1.0、单张图片"
+                    },{
                     name: "2.1.1、单张图片",
                     name_en: "2.1.1、单张图片",
                     thumbnail: "2.1.1、单张图片.png",
@@ -220,6 +233,12 @@ var exampleConfig = {
                     name_en: "2.1.14、shp",
                     thumbnail: "2.1.14、shp.png",
                     fileName: "2.1.14、shp"
+                },
+                {
+                    name: "2.1.15、动态时序图",
+                    name_en: "2.1.15、动态时序图",
+                    thumbnail: "2.1.15、动态时序图.png",
+                    fileName: "2.1.15、动态时序图"
                 },
                 ]
             },
@@ -336,10 +355,10 @@ var exampleConfig = {
                         fileName: "2.3.14、道路"
                     },
                     {
-                        name: "2.3.15、canvas",
-                        name_en: "2.3.15、canvas",
-                        thumbnail: "2.3.15、canvas.png",
-                        fileName: "2.3.15、canvas"
+                        name: "2.3.15、svg",
+                        name_en: "2.3.15、svg",
+                        thumbnail: "2.3.15、svg.png",
+                        fileName: "2.3.15、svg"
                     },
                     {
                         name: "2.3.16、gif",
@@ -352,6 +371,24 @@ var exampleConfig = {
                         name_en: "2.3.17、聚合",
                         thumbnail: "2.3.17、聚合.png",
                         fileName: "2.3.17、聚合"
+                    },
+                    {
+                        name: "2.3.18、czml",
+                        name_en: "2.3.18、czml",
+                        thumbnail: "2.3.18、czml.png",
+                        fileName: "2.3.18、czml"
+                    },
+                    {
+                        name: "2.3.19、字体图标",
+                        name_en: "2.3.19、字体图标",
+                        thumbnail: "2.3.19、字体图标.png",
+                        fileName: "2.3.19、字体图标"
+                    },
+                    {
+                        name: "2.3.20、字体图标缩放",
+                        name_en: "2.3.20、字体图标缩放",
+                        thumbnail: "2.3.20、字体图标缩放.png",
+                        fileName: "2.3.20、字体图标缩放"
                     },
 
                 ]

@@ -543,6 +543,11 @@
             } else if (layer == 'poi_label' && resolution <= 1.194328566955879 &&
                 scalerank >= 5 && maki !== 'marker') {
                 styles[length++] = getIcon(maki);
+            } else  {
+                fill.setColor('#a0c8f0');
+                stroke.setColor('rgba(255,255,255,0.8)');
+                stroke.setWidth(1);
+                styles[length++] = polygon;
             }
             styles.length = length;
             return styles;
