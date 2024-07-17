@@ -390,7 +390,12 @@ var exampleConfig = {
                         thumbnail: "2.3.20、字体图标缩放.png",
                         fileName: "2.3.20、字体图标缩放"
                     },
-
+                    {
+                        name: "2.3.21、各种entity",
+                        name_en: "2.3.21、各种entity",
+                        thumbnail: "2.3.21、各种entity.png",
+                        fileName: "2.3.21、各种entity"
+                    },
                 ]
             },
             "map4": {
@@ -643,6 +648,12 @@ var exampleConfig = {
                         thumbnail: "5.1.6、场景出图.png",
                         fileName: "5.1.6、场景出图"
                     },
+                    {
+                        name: "5.1.7、体积云",
+                        name_en: "5.1.7、体积云",
+                        thumbnail: "5.1.7、体积云.png",
+                        fileName: "5.1.7、体积云"
+                    },
                 ]
             },
             "map6": {
@@ -704,6 +715,24 @@ var exampleConfig = {
                         thumbnail: "5.3.7、圆锥体.png",
                         fileName: "5.3.7、圆锥体"
                     },
+                    {
+                        name: "5.3.8、雷达扫描",
+                        name_en: "5.3.8、雷达扫描",
+                        thumbnail: "5.3.8、雷达扫描.png",
+                        fileName: "5.3.8、雷达扫描"
+                    },
+                    {
+                        name: "5.3.9、电子围栏",
+                        name_en: "5.3.9、电子围栏",
+                        thumbnail: "5.3.9、电子围栏.png",
+                        fileName: "5.3.9、电子围栏"
+                    },
+                    {
+                        name: "5.3.10、电子围栏2",
+                        name_en: "5.3.10、电子围栏2",
+                        thumbnail: "5.3.10、电子围栏2.png",
+                        fileName: "5.3.10、电子围栏2"
+                    },
                 ]
             },
         }
@@ -745,6 +774,24 @@ var exampleConfig = {
                         name_en: "6.1.5、撞击断裂体",
                         thumbnail: "6.1.5、撞击断裂体.png",
                         fileName: "6.1.5、撞击断裂体"
+                    },
+                ]
+            },
+        }
+    },
+    "mapping": {
+        name: "7、材质",
+        name_en: "7、材质",
+        content: {
+            "map111": {
+                name: "7.1、材质",
+                name_en: "7.1、材质",
+                content: [
+                    {
+                        name: "7.1.1、雷达",
+                        name_en: "7.1.1、雷达",
+                        thumbnail: "7.1.1、雷达.png",
+                        fileName: "7.1.1、雷达"
                     },
                 ]
             },

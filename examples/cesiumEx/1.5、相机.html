@@ -26,6 +26,9 @@
         viewer.camera.flyTo({
             //destination : Cesium.Rectangle.fromDegrees(west, south, east, north),
             destination: Cesium.Cartesian3.fromDegrees(110.511154, 29.362943, 16531517.4),
+
+            // ------------------------------------用这个，不卡顿，否则会在终点卡顿！！！！！！！！--------------------------------------------
+            easingFunction: Cesium.EasingFunction.LINEAR_NONE, 
             duration: 5,
             orientation: {
                 heading: Cesium.Math.toRadians(348.3), // 水平旋转，围绕Y轴，0为正北方向
@@ -37,6 +40,7 @@
                     destination: Cesium.Cartesian3.fromDegrees(115.585535, 22.016248,
                         5220342.6),
                     duration: 5,
+                    easingFunction: Cesium.EasingFunction.LINEAR_NONE,
                     orientation: {
                         heading: Cesium.Math.toRadians(
                             346.4), // east, default value is 0.0 (north)
@@ -48,6 +52,7 @@
                             destination: Cesium.Cartesian3.fromDegrees(119.441071, 34.651193,
                                 743459.7),
                             duration: 5,
+                            easingFunction: Cesium.EasingFunction.LINEAR_NONE,
                             orientation: {
                                 heading: Cesium.Math.toRadians(
                                     346.4), // east, default value is 0.0 (north)
