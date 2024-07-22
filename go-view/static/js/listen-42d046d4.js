@@ -1,0 +1,1 @@
+import{a as f}from"./querySelectorAll-a0b713c4.js";function i(t,n,r,e){var c=e&&typeof e!="boolean"?e.capture:e;t.removeEventListener(n,r,c),r.__once&&t.removeEventListener(n,r.__once,c)}function v(t,n,r,e){return f(t,n,r,e),function(){i(t,n,r,e)}}export{v as l};
