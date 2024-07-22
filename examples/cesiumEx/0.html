@@ -1,0 +1,183 @@
+<!--********************************************************************
+* by jiawanlong
+*********************************************************************-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./../../cesium/Cesium1.98/Widgets/widgets.css" />
+    <script type="text/javascript" src="./../../cesium/Cesium1.98/Cesium.js"></script>
+    <script src="./cesium.map.min.js"></script>
+    <script src="./CircleScanSystem.js"></script>
+    <script src="./latlng.js"></script>
+</head>
+
+<body style="
+      margin: 0;
+      overflow: hidden;
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+    ">
+    <div id="map" style="margin: 0 auto; width: 100%; height: 100%"></div>
+    <script type="text/javascript">
+        Cesium.Ion.defaultAccessToken =
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3ZjQ5ZGUzNC1jNWYwLTQ1ZTMtYmNjYS05YTY4ZTVmN2I2MDkiLCJpZCI6MTE3MTM4LCJpYXQiOjE2NzY0NDUyODB9.ZaNSBIfc1sGLhQd_xqhiSsc0yr8oS0wt1hAo9gbke6M";
+        const viewer = new Cesium.Viewer("map", {});
+
+        // 清除默认底图
+        viewer.imageryLayers.remove(viewer.imageryLayers.get(0));
+
+        // 清除默认地形
+        viewer.scene.terrainProvider = new Cesium.EllipsoidTerrainProvider({});
+
+        // 加载单张图片
+        var imageryProvider = new Cesium.SingleTileImageryProvider({
+            url: "./world_b.jpg",
+            id: "1",
+        });
+        viewer.imageryLayers.addImageryProvider(imageryProvider);
+
+        var options = {
+            crs: "WGS84", // 使用84坐标系，默认为：GCJ02
+            style: 4,
+        };
+        viewer.imageryLayers.add(
+            new Cesium.ImageryLayer(new Cesium.TencentImageryProvider(options))
+        );
+        let tileset;
+
+        let czmldata = new Cesium.CzmlDataSource.load("./wx.czml");
+        viewer.dataSources.add(czmldata);
+        viewer.clock.shouldAnimate = true;
+
+        let inters = 3;
+        let lon = 110;
+        let quan = 1;
+        let timer = setInterval(() => {
+            lon = lon - inters;
+            if (lon < -180) {
+                lon = 180;
+                quan = quan + 1;
+            }
+            if (quan == 2 && lon > 110) {
+                clearInterval(timer);
+                viewer.camera.flyTo({
+                    destination: Cesium.Cartesian3.fromDegrees(110, 10, 50000000.0),
+                    orientation: {
+                        heading: Cesium.Math.toRadians(358.0),
+                        pitch: Cesium.Math.toRadians(-89.5),
+                        roll: 0.0,
+                    },
+                    easingFunction: Cesium.EasingFunction.LINEAR_NONE,
+                    complete: () => {
+                        viewer.camera.flyTo({
+                            destination: Cesium.Cartesian3.fromDegrees(
+                                121.549708,
+                                25.036475,
+                                2662.5
+                            ),
+                            // easingFunction: Cesium.EasingFunction.LINEAR_NONE, 
+                            duration: 5,
+                            orientation: {
+                                heading: Cesium.Math.toRadians(2.8),
+                                pitch: Cesium.Math.toRadians(-84.8),
+                                roll: 0.0,
+                            },
+                            complete: () => {
+                                loadsss();
+                            },
+                        });
+                    },
+                });
+            } else {
+                viewer.camera.setView({
+                    destination: Cesium.Cartesian3.fromDegrees(lon, 10, 50000000.0),
+                    orientation: {
+                        heading: Cesium.Math.toRadians(358.0),
+                        pitch: Cesium.Math.toRadians(-89.5),
+                        roll: 0.0,
+                    },
+                });
+            }
+        }, 30);
+
+        var circleScanSystem = new CircleScanSystem(viewer, {
+            type: "Circle",
+            lon: "114.34485552299206",
+            lat: "30.59754814959118",
+        });
+        var circleScanSystem1 = new CircleScanSystem(viewer, {
+            type: "Radar",
+            lon: "114.37485552299206",
+            lat: "30.52754814959118",
+        });
+        var circleScanSystem2 = new CircleScanSystem(viewer, {
+            type: "Radar",
+            lon: "114.4485552299206",
+            lat: "30.57754814959118",
+        });
+
+        function loadsss() {
+            tileset = new Cesium.Cesium3DTileset({
+                url: "./data/tileset.json",
+            });
+
+            tileset.readyPromise
+                .then(function (tileset) {
+                    viewer.scene.primitives.add(tileset);
+
+                    viewer.camera.flyTo({
+                        destination: Cesium.Cartesian3.fromDegrees(
+                            121.549884,
+                            25.025771,
+                            1050.6
+                        ),
+                        duration: 2,
+                        orientation: {
+                            heading: Cesium.Math.toRadians(0.7),
+                            pitch: Cesium.Math.toRadians(-38.7),
+                            roll: 0.0,
+                        },
+                    });
+
+                    customShader2(tileset);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
+        function customShader2(tileset) {
+            let customShader = new Cesium.CustomShader({
+                //片元着色器
+                fragmentShaderText: `
+                        void fragmentMain(FragmentInput fsInput, inout czm_modelMaterial material) {
+                            vec3 positionMC = fsInput.attributes.positionMC;
+                            material.diffuse = vec3(0.0, 1.0-positionMC.y*0.005, 1.0-positionMC.y*0.0015);
+
+                            float _baseHeight = 18.0; // 物体的基础高度，需要修改成一个合适的建筑基础高度
+                            float _heightRange = 60.0; // 高亮的范围(_baseHeight ~ _baseHeight + _heightRange) 默认是 0-60米
+                            float _glowRange = 120.0; // 光环的移动范围(高度)
+
+                            float vtxf_height = fsInput.attributes.positionMC.y - _baseHeight;
+                            float vtxf_a11 = fract(czm_frameNumber / 360.0) * 3.14159265 * 2.0; //此处括号内分母为移动速度
+                            float vtxf_a12 = vtxf_height / _heightRange + sin(vtxf_a11) * 0.1;
+                            material.diffuse *= vec3(vtxf_a12, vtxf_a12, vtxf_a12);
+
+                            float vtxf_a13 = fract(czm_frameNumber / 360.0); //此处括号内分母为移动速度，数值越大，速度越慢
+                            float vtxf_h = clamp(vtxf_height / _glowRange, 0.0, 1.0);
+                            vtxf_a13 = abs(vtxf_a13 - 0.5) * 2.0;
+                            float vtxf_diff = step(0.01, abs(vtxf_h - vtxf_a13)); // 0.1 为高亮光条的范围（粗细）
+                            material.diffuse += material.diffuse * (1.0 - vtxf_diff);
+                        }`,
+            });
+            tileset.customShader = customShader;
+        }
+    </script>
+</body>
+
+</html>
