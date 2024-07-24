@@ -27,10 +27,12 @@
         const viewer = new Cesium.Viewer("map", {});
         viewer.scene.debugShowFramesPerSecond = true;
         viewer.scene.globe.depthTestAgainstTerrain = true;
-
-        function PolylineTrailLinkMaterialProperty(color, duration, d) {
+        
+        function PolylineTrailLinkMaterialProperty(color, duration, d,imgurl) {
             this._definitionChanged = new Cesium.Event();
             this._color = undefined;
+            this._color = undefined;
+            this.imgurl = imgurl;
             this._colorSubscription = undefined;
             this.color = color;
             this.duration = duration || 3000;
@@ -64,7 +66,8 @@
                 result = {};
             }
             result.color = Cesium.Property.getValueOrClonedDefault(this._color, time, Cesium.Color.WHITE, result.color);
-            result.image = Cesium.Material.PolylineTrailLinkImage;
+            // result.image = Cesium.Material.PolylineTrailLinkImage;
+            result.image = this.imgurl;
             result.time = (((new Date()).getTime() - this._time) % this.duration) / this.duration * this._d;
             return result;
         }
@@ -77,7 +80,7 @@
 
         Cesium.PolylineTrailLinkMaterialProperty = PolylineTrailLinkMaterialProperty;
         Cesium.Material.PolylineTrailLinkType = 'PolylineTrailLink';
-        Cesium.Material.PolylineTrailLinkImage = "./line.png";
+        Cesium.Material.PolylineTrailLinkImage = "";
 
         Cesium.Material.PolylineTrailLinkSource = `
             czm_material czm_getMaterial(czm_materialInput materialInput)
@@ -115,7 +118,20 @@
                     -80, 31, 250000,
                     -100, 31, 250000,
                 ]),
-                material: new Cesium.PolylineTrailLinkMaterialProperty(Cesium.Color.WHITE, 3000, 1)
+                material: new Cesium.PolylineTrailLinkMaterialProperty(Cesium.Color.WHITE, 3000, 1,"./line.png")
+            }
+        });
+
+        viewer.entities.add({
+            name: 'PolylineTrail',
+            polygon: {
+                hierarchy: Cesium.Cartesian3.fromDegreesArrayHeights([
+                    -100, 40, 250000,
+                    -80, 40, 250000,
+                    -80, 40.1, 250000,
+                    -100, 40.1, 250000,
+                ]),
+                material: new Cesium.PolylineTrailLinkMaterialProperty(Cesium.Color.WHITE, 1000, 1,"./line1.png")
             }
         });
 

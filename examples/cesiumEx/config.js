@@ -7,7 +7,7 @@ var exampleConfig = {
         name: "1、基础",
         name_en: "base",
         content: {
-            "map": {
+            "maxssp": {
                 name: "1.1、基础",
                 name_en: "base",
                 content: [{
@@ -141,7 +141,7 @@ var exampleConfig = {
         name: "2、图层",
         name_en: "layer",
         content: {
-            "map1": {
+            "maxaxsap1": {
                 name: "2.1、影像",
                 name_en: "2.1、影像",
                 content: [
@@ -242,7 +242,7 @@ var exampleConfig = {
                 },
                 ]
             },
-            "map2": {
+            "masassp2": {
                 name: "2.2、地形",
                 name_en: "2.2、地形",
                 content: [
@@ -266,7 +266,7 @@ var exampleConfig = {
                     },
                 ]
             },
-            "map3": {
+            "mapfdfsa3": {
                 name: "2.3、矢量",
                 name_en: "2.3、矢量",
                 content: [
@@ -398,7 +398,7 @@ var exampleConfig = {
                     },
                 ]
             },
-            "map4": {
+            "mapfdff4": {
                 name: "2.4、模型",
                 name_en: "2.4、模型",
                 content: [
@@ -440,7 +440,7 @@ var exampleConfig = {
         name: "3、3Dtiles",
         name_en: "3、3Dtiles",
         content: {
-            "map5": {
+            "mavfdp5": {
                 name: "3.1、3Dtiles",
                 name_en: "3.1、3Dtiles",
                 content: [
@@ -488,7 +488,7 @@ var exampleConfig = {
         name: "4、空间分析",
         name_en: "4、空间分析",
         content: {
-            "map5": {
+            "map8787775": {
                 name: "4.1、空间分析",
                 name_en: "4.1、空间分析",
                 content: [
@@ -560,7 +560,7 @@ var exampleConfig = {
                     },
                 ]
             },
-            "map6": {
+            "ma878p6": {
                 name: "4.2、量算",
                 name_en: "4.2、量算",
                 content: [
@@ -573,7 +573,7 @@ var exampleConfig = {
 
                 ]
             },
-            "map7": {
+            "map77899": {
                 name: "4.3、视频融合",
                 name_en: "4.3、视频融合",
                 content: [
@@ -597,7 +597,7 @@ var exampleConfig = {
         name: "5、特效",
         name_en: "5、特效",
         content: {
-            "map5": {
+            "map8775": {
                 name: "5.1、场景相关",
                 name_en: "5.1、场景相关",
                 content: [
@@ -656,7 +656,7 @@ var exampleConfig = {
                     },
                 ]
             },
-            "map6": {
+            "ma87p6": {
                 name: "5.2、回调相关",
                 name_en: "5.2、回调相关",
                 content: [
@@ -669,7 +669,7 @@ var exampleConfig = {
 
                 ]
             },
-            "map7": {
+            "map5787": {
                 name: "5.3、特殊形状",
                 name_en: "5.3、特殊形状",
                 content: [
@@ -735,13 +735,50 @@ var exampleConfig = {
                     },
                 ]
             },
+            "map5w21787": {
+                name: "5.4、粒子效果",
+                name_en: "5.4、粒子效果",
+                content: [
+                    {
+                        name: "5.4.1、火焰",
+                        name_en: "5.4.1、火焰",
+                        thumbnail: "5.4.1、火焰.png",
+                        fileName: "5.4.1、火焰"
+                    },
+                    {
+                        name: "5.4.2、水枪",
+                        name_en: "5.4.2、水枪",
+                        thumbnail: "5.4.2、水枪.png",
+                        fileName: "5.4.2、水枪"
+                    },
+                    {
+                        name: "5.4.3、爆炸",
+                        name_en: "5.4.3、爆炸",
+                        thumbnail: "5.4.3、爆炸.png",
+                        fileName: "5.4.3、爆炸"
+                    },
+                    {
+                        name: "5.4.4、喷雾",
+                        name_en: "5.4.4、喷雾",
+                        thumbnail: "5.4.4、喷雾.png",
+                        fileName: "5.4.4、喷雾"
+                    },
+                    {
+                        name: "5.4.5、烟",
+                        name_en: "5.4.5、烟",
+                        thumbnail: "5.4.5、烟.png",
+                        fileName: "5.4.5、烟"
+                    },
+                  
+                ]
+            },
         }
     },
     "control": {
         name: "6、物理引擎",
         name_en: "6、物理引擎",
         content: {
-            "map111": {
+            "map5444444444111": {
                 name: "6.1、ammo",
                 name_en: "6.1、ammo",
                 content: [
@@ -779,19 +816,79 @@ var exampleConfig = {
             },
         }
     },
-    "mapping": {
+    "clientSpatialAnalyst": {
         name: "7、材质",
         name_en: "7、材质",
         content: {
-            "map111": {
+            "map1322345511": {
                 name: "7.1、材质",
                 name_en: "7.1、材质",
                 content: [
+                    {
+                        name: "7.1.0、Primitive",
+                        name_en: "7.1.0、Primitive",
+                        thumbnail: "7.1.0、Primitive.png",
+                        fileName: "7.1.0、Primitive"
+                    },
+                    {
+                        name: "7.1.0、Entity",
+                        name_en: "7.1.0、Entity",
+                        thumbnail: "7.1.0、Entity.png",
+                        fileName: "7.1.0、Entity"
+                    },
                     {
                         name: "7.1.1、雷达",
                         name_en: "7.1.1、雷达",
                         thumbnail: "7.1.1、雷达.png",
                         fileName: "7.1.1、雷达"
+                    },
+                    { 
+                        name: "7.1.2、动态扩散点",
+                        name_en: "7.1.2、动态扩散点",
+                        thumbnail: "7.1.2、动态扩散点.png",
+                        fileName: "7.1.2、动态扩散点"
+                    },
+                    {
+                        name: "7.1.3、雷达扫描",
+                        name_en: "7.1.3、雷达扫描",
+                        thumbnail: "7.1.3、雷达扫描.png",
+                        fileName: "7.1.3、雷达扫描"
+                    },
+                    {
+                        name: "7.1.4、水波纹",
+                        name_en: "7.1.4、水波纹",
+                        thumbnail: "7.1.4、水波纹.png",
+                        fileName: "7.1.4、水波纹"
+                    },
+                    {
+                        name: "7.1.5、流动线",
+                        name_en: "7.1.5、流动线",
+                        thumbnail: "7.1.5、流动线.png",
+                        fileName: "7.1.5、流动线"
+                    },
+                ]
+            },
+        }
+    },
+    "viz": {
+        name: "8、可视化",
+        name_en: "8、可视化",
+        content: {
+            "map11cddd3233231": {
+                name: "8.1、克里金",
+                name_en: "8.1、克里金",
+                content: [
+                    {
+                        name: "8.1.1、kriging",
+                        name_en: "8.1.1、kriging",
+                        thumbnail: "8.1.1、kriging.png",
+                        fileName: "8.1.1、kriging"
+                    },
+                    {
+                        name: "8.1.2、海流",
+                        name_en: "8.1.2、海流",
+                        thumbnail: "8.1.2、海流.png",
+                        fileName: "8.1.2、海流"
                     },
                 ]
             },

@@ -13,7 +13,7 @@
     constructor(viewer,options){
       this.viewer = viewer;
       var data = {
-        radius: '1000',
+        radius: options.radius || '100',
         scanColor: new Cesium.Color(1.0, 0.0, 0.0, 1),
         interval:'3000'
       }
