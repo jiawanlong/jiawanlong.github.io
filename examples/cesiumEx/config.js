@@ -3,6 +3,24 @@ var identification = {
     name: "Leaflet"
 };
 var exampleConfig = {
+    "mapping": {
+        name: "0、综合应用",
+        name_en: "0、综合应用",
+        content: {
+            "maxssp": {
+                name: "综合应用",
+                name_en: "base",
+                content: [{
+                    name: "案例1",
+                    name_en: "案例1",
+                    thumbnail: "案例1.png",
+                    fileName: "0"
+                },
+
+                ]
+            },
+        }
+    },
     "base": {
         name: "1、基础",
         name_en: "base",
@@ -150,96 +168,96 @@ var exampleConfig = {
                         name_en: "2.1.0、单张图片",
                         thumbnail: "2.1.0、单张图片.png",
                         fileName: "2.1.0、单张图片"
-                    },{
-                    name: "2.1.1、单张图片",
-                    name_en: "2.1.1、单张图片",
-                    thumbnail: "2.1.1、单张图片.png",
-                    fileName: "2.1.1、单张图片"
-                },
-                {
-                    name: "2.1.2、xyz服务",
-                    name_en: "2.1.2、xyz服务",
-                    thumbnail: "2.1.2、xyz服务.png",
-                    fileName: "2.1.2、xyz服务"
-                },
-                {
-                    name: "2.1.3、tms服务",
-                    name_en: "2.1.3、tms服务",
-                    thumbnail: "2.1.3、tms服务.png",
-                    fileName: "2.1.3、tms服务"
-                },
-                {
-                    name: "2.1.4、wms服务",
-                    name_en: "2.1.4、wms服务",
-                    thumbnail: "2.1.4、wms服务.png",
-                    fileName: "2.1.4、wms服务"
-                },
-                {
-                    name: "2.1.5、wmts服务",
-                    name_en: "2.1.5、wmts服务",
-                    thumbnail: "2.1.5、wmts服务.png",
-                    fileName: "2.1.5、wmts服务"
-                },
-                {
-                    name: "2.1.6、天地图服务",
-                    name_en: "2.1.6、天地图服务",
-                    thumbnail: "2.1.6、天地图服务.png",
-                    fileName: "2.1.6、天地图服务"
-                },
-                {
-                    name: "2.1.7、4490服务",
-                    name_en: "2.1.7、4490服务",
-                    thumbnail: "2.1.7、4490服务.png",
-                    fileName: "2.1.7、4490服务"
-                },
-                {
-                    name: "2.1.8、4490服务2",
-                    name_en: "2.1.8、4490服务2",
-                    thumbnail: "2.1.8、4490服务2.png",
-                    fileName: "2.1.8、4490服务2"
-                },
-                {
-                    name: "2.1.9、影像操作",
-                    name_en: "2.1.9、影像操作",
-                    thumbnail: "2.1.9、影像操作.png",
-                    fileName: "2.1.9、影像操作"
-                },
-                {
-                    name: "2.1.10、加载shp",
-                    name_en: "2.1.10、加载shp",
-                    thumbnail: "1.11、加载shp.png",
-                    fileName: "1.11、加载shp"
-                },
-                {
-                    name: "2.1.11、加载mvt",
-                    name_en: "2.1.11、加载mvt",
-                    thumbnail: "1.12、加载mvt.png",
-                    fileName: "1.12、加载mvt"
-                },
-                {
-                    name: "2.1.12、高德、百度等并纠偏",
-                    name_en: "2.1.12、高德、百度等并纠偏",
-                    thumbnail: "2.1.12、高德、百度等并纠偏.png",
-                    fileName: "2.1.12、高德、百度等并纠偏"
-                },
-                {
-                    name: "2.1.13、wkt",
-                    name_en: "2.1.13、wkt",
-                    thumbnail: "2.1.13、wkt.png",
-                    fileName: "2.1.13、wkt"
-                },
-                {
-                    name: "2.1.14、shp",
-                    name_en: "2.1.14、shp",
-                    thumbnail: "2.1.14、shp.png",
-                    fileName: "2.1.14、shp"
-                },
-                {
-                    name: "2.1.15、动态时序图",
-                    name_en: "2.1.15、动态时序图",
-                    thumbnail: "2.1.15、动态时序图.png",
-                    fileName: "2.1.15、动态时序图"
-                },
+                    }, {
+                        name: "2.1.1、单张图片",
+                        name_en: "2.1.1、单张图片",
+                        thumbnail: "2.1.1、单张图片.png",
+                        fileName: "2.1.1、单张图片"
+                    },
+                    {
+                        name: "2.1.2、xyz服务",
+                        name_en: "2.1.2、xyz服务",
+                        thumbnail: "2.1.2、xyz服务.png",
+                        fileName: "2.1.2、xyz服务"
+                    },
+                    {
+                        name: "2.1.3、tms服务",
+                        name_en: "2.1.3、tms服务",
+                        thumbnail: "2.1.3、tms服务.png",
+                        fileName: "2.1.3、tms服务"
+                    },
+                    {
+                        name: "2.1.4、wms服务",
+                        name_en: "2.1.4、wms服务",
+                        thumbnail: "2.1.4、wms服务.png",
+                        fileName: "2.1.4、wms服务"
+                    },
+                    {
+                        name: "2.1.5、wmts服务",
+                        name_en: "2.1.5、wmts服务",
+                        thumbnail: "2.1.5、wmts服务.png",
+                        fileName: "2.1.5、wmts服务"
+                    },
+                    {
+                        name: "2.1.6、天地图服务",
+                        name_en: "2.1.6、天地图服务",
+                        thumbnail: "2.1.6、天地图服务.png",
+                        fileName: "2.1.6、天地图服务"
+                    },
+                    {
+                        name: "2.1.7、4490服务",
+                        name_en: "2.1.7、4490服务",
+                        thumbnail: "2.1.7、4490服务.png",
+                        fileName: "2.1.7、4490服务"
+                    },
+                    {
+                        name: "2.1.8、4490服务2",
+                        name_en: "2.1.8、4490服务2",
+                        thumbnail: "2.1.8、4490服务2.png",
+                        fileName: "2.1.8、4490服务2"
+                    },
+                    {
+                        name: "2.1.9、影像操作",
+                        name_en: "2.1.9、影像操作",
+                        thumbnail: "2.1.9、影像操作.png",
+                        fileName: "2.1.9、影像操作"
+                    },
+                    {
+                        name: "2.1.10、加载shp",
+                        name_en: "2.1.10、加载shp",
+                        thumbnail: "1.11、加载shp.png",
+                        fileName: "1.11、加载shp"
+                    },
+                    {
+                        name: "2.1.11、加载mvt",
+                        name_en: "2.1.11、加载mvt",
+                        thumbnail: "1.12、加载mvt.png",
+                        fileName: "1.12、加载mvt"
+                    },
+                    {
+                        name: "2.1.12、高德、百度等并纠偏",
+                        name_en: "2.1.12、高德、百度等并纠偏",
+                        thumbnail: "2.1.12、高德、百度等并纠偏.png",
+                        fileName: "2.1.12、高德、百度等并纠偏"
+                    },
+                    {
+                        name: "2.1.13、wkt",
+                        name_en: "2.1.13、wkt",
+                        thumbnail: "2.1.13、wkt.png",
+                        fileName: "2.1.13、wkt"
+                    },
+                    {
+                        name: "2.1.14、shp",
+                        name_en: "2.1.14、shp",
+                        thumbnail: "2.1.14、shp.png",
+                        fileName: "2.1.14、shp"
+                    },
+                    {
+                        name: "2.1.15、动态时序图",
+                        name_en: "2.1.15、动态时序图",
+                        thumbnail: "2.1.15、动态时序图.png",
+                        fileName: "2.1.15、动态时序图"
+                    },
                 ]
             },
             "masassp2": {
@@ -769,7 +787,7 @@ var exampleConfig = {
                         thumbnail: "5.4.5、烟.png",
                         fileName: "5.4.5、烟"
                     },
-                  
+
                 ]
             },
         }
@@ -842,7 +860,7 @@ var exampleConfig = {
                         thumbnail: "7.1.1、雷达.png",
                         fileName: "7.1.1、雷达"
                     },
-                    { 
+                    {
                         name: "7.1.2、动态扩散点",
                         name_en: "7.1.2、动态扩散点",
                         thumbnail: "7.1.2、动态扩散点.png",
