@@ -1,6 +1,6 @@
 /* by jiawanlong*/
 var identification = {
-    name: "Leaflet"
+    name: "wengl"
 };
 var exampleConfig = {
     "base": {
@@ -10,12 +10,25 @@ var exampleConfig = {
             "map": {
                 name: "1.1、基础",
                 name_en: "base",
-                content: [{
-                    name: "1.1、默认设置",
-                    name_en: "1.1、默认设置",
-                    thumbnail: "1.1、默认设置.png",
-                    fileName: "1.1、默认设置"
-                },
+                content: [
+                    {
+                        name: "1.1、绘制点",
+                        name_en: "1.1、绘制点",
+                        thumbnail: "1.1、绘制点.png",
+                        fileName: "1.1、绘制点"
+                    },
+                    {
+                        name: "1.2、绘制线",
+                        name_en: "1.2、绘制线",
+                        thumbnail: "1.2、绘制线.png",
+                        fileName: "1.2、绘制线"
+                    },
+                    {
+                        name: "1.3、绘制三角形",
+                        name_en: "1.3、绘制三角形",
+                        thumbnail: "1.3、绘制三角形.png",
+                        fileName: "1.3、绘制三角形"
+                    },
 
 
                 ]

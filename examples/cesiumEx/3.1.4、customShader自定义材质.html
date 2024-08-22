@@ -38,7 +38,8 @@
             .catch(function (error) {
                 console.log(error);
             });
-
+        
+        // 纯渐变色
         function customShader1() {
             let customShader = new Cesium.CustomShader({
                 //片元着色器
@@ -46,10 +47,12 @@
                     void fragmentMain(FragmentInput fsInput, inout czm_modelMaterial material) {
                         vec3 positionMC = fsInput.attributes.positionMC;
                         material.diffuse = vec3(0.0, 1.0-positionMC.y*0.005, 1.0-positionMC.y*0.0015);
-                }`
+                    }`
             })
             tileset.customShader = customShader
         }
+
+        // 纯渐变色+动态光圈
         function customShader2() {
             let customShader = new Cesium.CustomShader({
                 //片元着色器
@@ -152,6 +155,7 @@
                 `,
             }
         });
+
 
 
     </script>
