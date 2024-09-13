@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="../css/sideBar.css">
     <link rel="stylesheet" href="../css/editor.css">
     <script type="text/javascript" src="../js/utils.js"></script>
+    <style>
+      body{
+        overflow: hidden;
+      }
+    </style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
@@ -84,6 +89,14 @@
                 log.warning("注意！", "版权所属：贾宛龙！需要去除版权请微信联系：trampjwl！ ");
 
 log.success("注意！", "版权所属：贾宛龙！需要去除版权请微信联系：trampjwl！ ");
+
+
+setTimeout(function () {
+                var now = getNow();
+                watermark({
+                    "watermark_txt": "贾宛龙 \n（微信：trampjwl） " + now
+                });
+            }, 3000);
         })
     </script>
     <!-- ./wrapper end-->

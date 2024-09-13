@@ -1,5 +1,6 @@
 /* by jiawanlong*/
 (function () {
+    
     var r = new RegExp("(^|(.*?\\/))(include-web\.js)(\\?|$)"),
         s = document.getElementsByTagName('script'), targetScript;
     for (var i = 0; i < s.length; i++) {
@@ -230,4 +231,8 @@
     window.server = document.location.toString().match(/file:\/\//) ? "http://localhost:8090" : document.location.protocol + "//" + document.location.host;
     window.version = "11.1.1";
     window.preRelease = "";
+
+
+
+
 })();

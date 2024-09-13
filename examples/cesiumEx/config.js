@@ -23,11 +23,11 @@ var exampleConfig = {
                         thumbnail: "案例1.png",
                         fileName: "0"
                     },
+
                     //  {
                     //     name: "台风",
                     //     name_en: "台风",
                     //     thumbnail: "案例2.png",
-
                     //     fileName: "1"
                     // },
 
@@ -35,9 +35,9 @@ var exampleConfig = {
                         name: "下雨+闪电+洪水",
                         name_en: "下雨+闪电+洪水",
                         thumbnail: "2.png",
-
                         fileName: "2"
                     },
+
 
                 ]
             },
@@ -134,7 +134,7 @@ var exampleConfig = {
                     thumbnail: "1.14、倾斜摄影单体.png",
                     fileName: "1.14、倾斜摄影单体"
                 },
-                {
+                { 
                     name: "1.15、罗盘、导航条",
                     name_en: "1.15、罗盘、导航条",
                     thumbnail: "1.15、罗盘、导航条.png",
@@ -158,20 +158,30 @@ var exampleConfig = {
                     thumbnail: "1.18、echarts时间轴.png",
                     fileName: "1.18、echarts时间轴"
                 },
-
-                    // {
-                    //     name: "相机",
-                    //     name_en: "相机",
-                    //     thumbnail: "1.5、相机.png",
-                    //     fileName: "1.5、相机"
-                    // },
-                    // {
-                    //     name: "事件",
-                    //     name_en: "事件",
-                    //     thumbnail: "1.6、事件",
-                    //     fileName: "1.6、事件"
-                    // }
-
+                {
+                    name: "1.19、任意坐标转换",
+                    name_en: "1.19、任意坐标转换",
+                    thumbnail: "1.19、任意坐标转换.png",
+                    fileName: "1.19、任意坐标转换"
+                },
+                {
+                    name: "1.20、echarts配置",
+                    name_en: "1.20、echarts配置",
+                    thumbnail: "1.20、echarts配置.png",
+                    fileName: "1.20、echarts配置"
+                },
+                // {
+                //     name: "相机",
+                //     name_en: "相机",
+                //     thumbnail: "1.5、相机.png",
+                //     fileName: "1.5、相机"
+                // },
+                // {
+                //     name: "事件",
+                //     name_en: "事件",
+                //     thumbnail: "1.6、事件",
+                //     fileName: "1.6、事件"
+                // }
 
                 ]
             },

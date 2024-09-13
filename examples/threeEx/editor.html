@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="../css/sideBar.css">
     <link rel="stylesheet" href="../css/editor.css">
     <script type="text/javascript" src="../js/utils.js"></script>
+    <style>
+        body{
+          overflow: hidden;
+        }
+      </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 
@@ -38,6 +43,13 @@
         $body.append("<script type='text/javascript' src='../js/common.js'><\/script>");
         $body.append("<script type='text/javascript' src='../js/sidebar.js'><\/script>");
         $body.append("<script type='text/javascript' src='../js/editor.js'><\/script>");
+
+            setTimeout(function () {
+                var now = getNow();
+                watermark({
+                    "watermark_txt": "贾宛龙 \n（微信：trampjwl） " + now
+                });
+            }, 3000);
     })
 </script>
 <!-- ./wrapper end-->
