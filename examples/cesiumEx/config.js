@@ -15,7 +15,7 @@ var exampleConfig = {
                         name: "",
                         name_en: "",
                         thumbnail: "0.png",
-                        fileName: "0"
+                        fileName: "00"
                     },
                     {
                         name: "智慧城市",

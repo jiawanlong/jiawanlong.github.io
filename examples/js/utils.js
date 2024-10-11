@@ -165,7 +165,7 @@ var utils = {
                 x = defaultSettings.watermark_x + (defaultSettings.watermark_width + defaultSettings.watermark_x_space) * j;
                 var mask_div = document.createElement('div');
                 mask_div.id = 'mask_div' + i + j;
-                mask_div.className = 'mask_div';
+                mask_div.className = '';
                 mask_div.appendChild(document.createTextNode(defaultSettings.watermark_txt));
                 mask_div.style.webkitTransform = "rotate(-" + defaultSettings.watermark_angle + "deg)";
                 mask_div.style.MozTransform = "rotate(-" + defaultSettings.watermark_angle + "deg)";

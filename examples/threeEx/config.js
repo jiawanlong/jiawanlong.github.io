@@ -3,6 +3,26 @@ var identification = {
     name: "Leaflet"
 };
 var exampleConfig = {
+    
+    "plot": {
+        name: "0、开源导航",
+        name_en: "0、开源导航",
+        content: {
+            "map": {
+                name: "友情推荐",
+                name_en: "友情推荐",
+                content: [
+                    {
+                        name: "1、优雅永不过时",
+                        name_en: "1、优雅永不过时",
+                        thumbnail: "1、优雅永不过时.png",
+                        fileName: "1、优雅永不过时"
+                    },
+                ]
+            },
+        }
+    },
+    
     "base": {
         name: "1、入门",
         name_en: "base",
