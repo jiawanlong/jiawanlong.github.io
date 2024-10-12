@@ -10,16 +10,39 @@
   <link rel="stylesheet" href="./../../cesium/Cesium1.98/Widgets/widgets.css">
   <script type="text/javascript" src="./../../cesium/Cesium1.98/Cesium.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./libgif.js"></script>
 </head>
 
 <body style="margin: 0; overflow: hidden; background: #fff; width: 100%; height: 100%; position: absolute; top: 0">
   <div id="map" style="margin: 0 auto; width: 100%; height: 100%"></div>
+  <ul style="position: absolute;z-index: 100;bottom: 30px;right: 10px;    color: #fff;background: #000000cc; list-style: none;;">
+    <li>
+      <span style=" border-radius: 10px;   width: 10px;height: 10px; display: inline-block; background: GREEN;"></span>
+      <span>热带低压</span>
+    </li>
+    <li>
+      <span   style="  border-radius: 10px; width: 10px;height: 10px; display: inline-block; background: BLUE;"></span>
+      <span>热带风暴</span>
+    </li>
+    <li>
+      <span style="    border-radius: 10px; width: 10px;height: 10px; display: inline-block; background: YELLOW;"></span>
+      <span>强热带风暴</span>
+    </li>
+    <li>
+      <span  style="  border-radius: 10px;  width: 10px;height: 10px; display: inline-block; background: #FBC712;"></span>
+      <span>台风</span>
+    </li>
+    <li>
+      <span style="   border-radius: 10px;  width: 10px;height: 10px; display: inline-block; background: RED;"></span>
+      <span>超强台风</span>
+    </li>
+  </ul>
   <script type="text/javascript">
 
     Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3ZjQ5ZGUzNC1jNWYwLTQ1ZTMtYmNjYS05YTY4ZTVmN2I2MDkiLCJpZCI6MTE3MTM4LCJpYXQiOjE2NzY0NDUyODB9.ZaNSBIfc1sGLhQd_xqhiSsc0yr8oS0wt1hAo9gbke6M'
     const viewer = new Cesium.Viewer('map', {});
     viewer.camera.setView({
-      destination: Cesium.Cartesian3.fromDegrees(112, 11, 10725692.0)
+      destination: Cesium.Cartesian3.fromDegrees(120, 20, 4025692.0)
     });
     let fengquanLayers = [];
 
@@ -71,6 +94,7 @@
             }
           });
           initForeast(points[points.length - 1])
+          adds(points)
         })
     }
 
@@ -114,6 +138,9 @@
       })
 
     }
+
+
+
 
     // 警戒线
     function initJJ() {
@@ -168,30 +195,74 @@
       });
     }
 
-    let currentPointObj = {
-      lon: 116.00,
-      lat: 29.6,
-      circle7: {
-        radius1: 350,
-        radius2: 450,
-        radius3: 400,
-        radius4: 350,
-      },
-      circle10: {
-        radius1: 250,
-        radius2: 270,
-        radius3: 250,
-        radius4: 220,
-      },
-      circle12: {
-        radius1: 170,
-        radius2: 150,
-        radius3: 150,
-        radius4: 170,
-      }
-    };
-    // removeTFLayer();
-    addTyphoonCircle();
+    let iii = 0;
+    let currentPointObj;
+    let tbentity;
+    function adds(data) {
+      addTB()
+
+      setInterval(function () {
+        let kkk = iii * 2
+        currentPointObj = {
+          lon: data[iii].lng,
+          lat: data[iii].lat,
+          circle7: {
+            radius1: 350 - kkk,
+            radius2: 450 - kkk,
+            radius3: 400 - kkk,
+            radius4: 350 - kkk,
+          },
+          circle10: {
+            radius1: 250 - kkk,
+            radius2: 270 - kkk,
+            radius3: 250 - kkk,
+            radius4: 220 - kkk,
+          },
+          circle12: {
+            radius1: 170 - kkk,
+            radius2: 150 - kkk,
+            radius3: 150 - kkk,
+            radius4: 170 - kkk,
+          }
+        };
+        tbentity.position = Cesium.Cartesian3.fromDegrees(data[iii].lng, data[iii].lat)
+
+        if (iii > 99) {
+          iii = 0
+        } else {
+          iii = iii + 1
+        }
+
+        removeTFLayer();
+        addTyphoonCircle();
+      }, 200);
+
+    }
+
+    function addTB() {
+      let div = document.createElement("div");
+      let img = document.createElement("img");
+      div.appendChild(img);
+      img.src = './tf.gif'
+
+      img.onload = () => {
+        let rub = new SuperGif({
+          gif: img
+        })
+        rub.load(() => {
+          tbentity = viewer.entities.add({
+            position: Cesium.Cartesian3.fromDegrees(75.166493, 39.9060534),
+            billboard: {
+              image: new Cesium.CallbackProperty(() => {
+                return rub.get_canvas().toDataURL("image/png");
+              }, false),
+              scale: 0.1,
+            },
+          });
+          resolve(entity);
+        });
+      };
+    }
 
 
     function removeTFLayer() {
@@ -218,7 +289,7 @@
                 }
                 return new Cesium.PolygonHierarchy(Cesium.Cartesian3.fromDegreesArray(points));
               }, false),
-            material: Cesium.Color.ORANGE.withAlpha(0.2),
+            material: Cesium.Color.ORANGE.withAlpha(0.05),
             extrudedHeight: 1000,
             outline: true,
             outlineColor: Cesium.Color.ORANGE,
@@ -264,7 +335,7 @@
           angle = startAngle + ((endAngle - startAngle) * i) / pointNum
           sin = Math.sin((angle * Math.PI) / 180)
           cos = Math.cos((angle * Math.PI) / 180)
-          console.log(center)
+          // console.log(center)
           x = center[0] + radius * sin
           y = center[1] + radius * cos
           points.push(x, y);
