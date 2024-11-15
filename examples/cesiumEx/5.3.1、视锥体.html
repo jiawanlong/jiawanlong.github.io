@@ -8,6 +8,8 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./../../cesium/Cesium1.98/Widgets/widgets.css" />
     <script type="text/javascript" src="./../../cesium/Cesium1.98/Cesium.js"></script>
+    <script src="./latlng.js"></script>
+
 </head>
 
 <body style="
@@ -51,7 +53,7 @@
             near,
             far,
             aspectRatio
-        ); 
+        );
 
         // 创建视锥体及轮廓线
         function addFrustum(position, orientation, fov, near, far, aspectRatio) {
@@ -91,6 +93,7 @@
                 },
             });
 
+
             let primitive = new Cesium.Primitive({
                 geometryInstances: [instanceGeo],
                 appearance: new Cesium.PerInstanceColorAppearance({
@@ -110,6 +113,27 @@
             });
             viewer.scene.primitives.add(primitive);
             viewer.scene.primitives.add(primitive1);
+
+
+            // --------------------------获取顶点坐标---------------------------------------------------------
+            let zb = Cesium.FrustumOutlineGeometry.createGeometry(instanceGeo.geometry)
+            const positions = zb.attributes.position.values;
+            console.log(positions)
+
+            const temp = [];
+            for (let i = 0; i < positions.length; i += 3) {
+                temp.push(positions.slice(i, i + 3));
+            }
+            console.log(temp)
+            
+            const result = [];
+            temp.forEach(function (chunk) {
+                result.push( latlng.formatPositon(new Cesium.Cartesian3(chunk[0], chunk[1], chunk[2])) );
+            });
+            console.log(result)
+            // --------------------------获取顶点坐标---------------------------------------------------------
+
+
         }
 
         function _getOrientation(cameraPosition, position) {

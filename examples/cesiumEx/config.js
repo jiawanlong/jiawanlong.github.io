@@ -38,7 +38,6 @@ var exampleConfig = {
                         fileName: "2"
                     },
 
-
                 ]
             },
         }
@@ -445,6 +444,12 @@ var exampleConfig = {
                         name_en: "2.3.21、各种entity",
                         thumbnail: "2.3.21、各种entity.jpg",
                         fileName: "2.3.21、各种entity"
+                    },
+                    {
+                        name: "2.3.22、切换2维bug",
+                        name_en: "2.3.22、切换2维bug",
+                        thumbnail: "2.3.22、切换2维bug.jpg",
+                        fileName: "2.3.22、切换2维bug"
                     },
                 ]
             },
@@ -922,6 +927,19 @@ var exampleConfig = {
                         thumbnail: "7.1.5、流动线.jpg",
                         fileName: "7.1.5、流动线"
                     },
+                ]
+            },
+            "map1322345514333231": {
+                name: "7.2、材质入门",
+                name_en: "7.2、材质入门",
+                content: [
+                    {
+                        name: "7.2.1、简易入门",
+                        name_en: "7.2.1、简易入门",
+                        thumbnail: "7.2.1、简易入门.jpg",
+                        fileName: "7.2.1、简易入门"
+                    },
+                   
                 ]
             },
         }
