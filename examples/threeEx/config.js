@@ -114,6 +114,25 @@ var exampleConfig = {
 
                 ]
             },
+            "m6661111ap": {
+                name: "1.2、地图相关",
+                name_en: "base",
+                content: [
+                    {
+                        name: "2.1.1、three-tile入门",
+                        name_en: "2.1.1、three-tile入门",
+                        thumbnail: "2.1.1、three-tile入门.jpg",
+                        fileName: "2.1.1、three-tile入门"
+                    },
+                    {
+                        name: "2.1.2、three-tile加载几何体",
+                        name_en: "2.1.2、three-tile加载几何体",
+                        thumbnail: "2.1.2、three-tile加载几何体.jpg",
+                        fileName: "2.1.2、three-tile加载几何体"
+                    },
+
+                ]
+            },
         }
     },
 
