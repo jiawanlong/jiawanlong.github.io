@@ -794,6 +794,12 @@ var exampleConfig = {
                         thumbnail: "5.3.10、电子围栏2.jpg",
                         fileName: "5.3.10、电子围栏2"
                     },
+                    {
+                        name: "5.3.11、雷达遮罩扫描",
+                        name_en: "5.3.11、雷达遮罩扫描",
+                        thumbnail: "5.3.11、雷达遮罩扫描.jpg",
+                        fileName: "5.3.11、雷达遮罩扫描"
+                    },
                 ]
             },
             "map5w21787": {
