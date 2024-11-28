@@ -970,6 +970,12 @@ var exampleConfig = {
                         thumbnail: "8.1.2、海流.jpg",
                         fileName: "8.1.2、海流"
                     },
+                    {
+                        name: "8.1.3、3d热力图",
+                        name_en: "8.1.3、3d热力图",
+                        thumbnail: "8.1.3、3d热力图.jpg",
+                        fileName: "8.1.3、3d热力图"
+                    },
                 ]
             },
         }
