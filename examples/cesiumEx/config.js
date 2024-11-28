@@ -715,6 +715,18 @@ var exampleConfig = {
                         thumbnail: "5.1.8、闪电.jpg",
                         fileName: "5.1.8、闪电"
                     },
+                    {
+                        name: "5.1.9、高度雾",
+                        name_en: "5.1.9、高度雾",
+                        thumbnail: "5.1.9、高度雾.jpg",
+                        fileName: "5.1.9、高度雾"
+                    },
+                    {
+                        name: "5.1.10、高度雾升级",
+                        name_en: "5.1.10、高度雾升级",
+                        thumbnail: "5.1.10、高度雾升级.jpg",
+                        fileName: "5.1.10、高度雾升级"
+                    },
                 ]
             },
             "ma87p6": {
