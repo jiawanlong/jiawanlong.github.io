@@ -18,6 +18,12 @@ var exampleConfig = {
                         thumbnail: "1、优雅永不过时.jpg",
                         fileName: "1、优雅永不过时"
                     },
+                    {
+                        name: "0、360",
+                        name_en: "0、360",
+                        thumbnail: "0、360.jpg",
+                        fileName: "0、360"
+                    },
                 ]
             },
         }

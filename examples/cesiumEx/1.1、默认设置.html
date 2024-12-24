@@ -80,9 +80,14 @@
         // 开启帧率
         viewer.scene.debugShowFramesPerSecond = true;
 
-
         // viewer.scene.morphTo2D()
         // viewer.scene.morphTo3D()
+
+        const imageryProvider = new Cesium.TileCoordinatesImageryProvider({
+            color: Cesium.Color.RED
+        })
+        const imageryLayer = new Cesium.ImageryLayer(imageryProvider)
+        viewer.imageryLayers.add(imageryLayer);
 
     </script>
 </body>

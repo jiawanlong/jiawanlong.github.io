@@ -8,6 +8,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./../../cesium/Cesium1.98/Widgets/widgets.css">
     <script type="text/javascript" src="./../../cesium/Cesium1.98/Cesium.js"></script>
+  <script src="./cesium.map.min.js"></script>
 </head>
 
 <body style="margin: 0; overflow: hidden; background: #fff; width: 100%; height: 100%; position: absolute; top: 0">
@@ -22,6 +23,20 @@
 
         Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3ZjQ5ZGUzNC1jNWYwLTQ1ZTMtYmNjYS05YTY4ZTVmN2I2MDkiLCJpZCI6MTE3MTM4LCJpYXQiOjE2NzY0NDUyODB9.ZaNSBIfc1sGLhQd_xqhiSsc0yr8oS0wt1hAo9gbke6M'
         const viewer = new Cesium.Viewer('map', {});
+
+        // 清除默认底图
+        viewer.imageryLayers.remove(viewer.imageryLayers.get(0));
+        // 清除默认地形
+        viewer.scene.terrainProvider = new Cesium.EllipsoidTerrainProvider({});
+
+        var options = {
+            crs: "WGS84", // 使用84坐标系，默认为：GCJ02
+            style: 4,
+        };
+        viewer.imageryLayers.add(
+            new Cesium.ImageryLayer(new Cesium.TencentImageryProvider(options))
+        );
+
         // 开启帧率
         viewer.scene.debugShowFramesPerSecond = true;
 
@@ -38,7 +53,7 @@
             .catch(function (error) {
                 console.log(error);
             });
-        
+
         // 纯渐变色
         function customShader1() {
             let customShader = new Cesium.CustomShader({
