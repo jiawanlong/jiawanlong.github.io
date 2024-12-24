@@ -37,7 +37,24 @@ var exampleConfig = {
                         thumbnail: "2.jpg",
                         fileName: "2"
                     },
-
+                    // {
+                    //     name: "航拍",
+                    //     name_en: "航拍",
+                    //     thumbnail: "3.jpg",
+                    //     fileName: "3"
+                    // },
+                    {
+                        name: "GUI",
+                        name_en: "GUI",
+                        thumbnail: "4.jpg",
+                        fileName: "4"
+                    },
+                    {
+                        name: "GUI视锥体",
+                        name_en: "GUI视锥体",
+                        thumbnail: "5.3.12、GUI视锥体.jpg",
+                        fileName: "5.3.12、GUI视锥体"
+                    },
                 ]
             },
         }
@@ -812,6 +829,7 @@ var exampleConfig = {
                         thumbnail: "5.3.11、雷达遮罩扫描.jpg",
                         fileName: "5.3.11、雷达遮罩扫描"
                     },
+                 
                 ]
             },
             "map5w21787": {
