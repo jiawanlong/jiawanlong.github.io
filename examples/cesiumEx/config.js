@@ -744,6 +744,12 @@ var exampleConfig = {
                         thumbnail: "5.1.10、高度雾升级.jpg",
                         fileName: "5.1.10、高度雾升级"
                     },
+                    {
+                        name: "5.1.11、局部下雨",
+                        name_en: "5.1.11、局部下雨",
+                        thumbnail: "5.1.11、局部下雨.jpg",
+                        fileName: "5.1.11、局部下雨"
+                    },
                 ]
             },
             "ma87p6": {
