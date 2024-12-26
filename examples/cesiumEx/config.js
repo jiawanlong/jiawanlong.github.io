@@ -24,7 +24,7 @@ var exampleConfig = {
                         fileName: "0"
                     },
 
-                     {
+                    {
                         name: "台风",
                         name_en: "台风",
                         thumbnail: "1.jpg",
@@ -150,7 +150,7 @@ var exampleConfig = {
                     thumbnail: "1.14、倾斜摄影单体.jpg",
                     fileName: "1.14、倾斜摄影单体"
                 },
-                { 
+                {
                     name: "1.15、罗盘、导航条",
                     name_en: "1.15、罗盘、导航条",
                     thumbnail: "1.15、罗盘、导航条.jpg",
@@ -186,18 +186,18 @@ var exampleConfig = {
                     thumbnail: "1.20、echarts配置.jpg",
                     fileName: "1.20、echarts配置"
                 },
-                // {
-                //     name: "相机",
-                //     name_en: "相机",
-                //     thumbnail: "1.5、相机.jpg",
-                //     fileName: "1.5、相机"
-                // },
-                // {
-                //     name: "事件",
-                //     name_en: "事件",
-                //     thumbnail: "1.6、事件",
-                //     fileName: "1.6、事件"
-                // }
+                    // {
+                    //     name: "相机",
+                    //     name_en: "相机",
+                    //     thumbnail: "1.5、相机.jpg",
+                    //     fileName: "1.5、相机"
+                    // },
+                    // {
+                    //     name: "事件",
+                    //     name_en: "事件",
+                    //     thumbnail: "1.6、事件",
+                    //     fileName: "1.6、事件"
+                    // }
 
                 ]
             },
@@ -835,7 +835,7 @@ var exampleConfig = {
                         thumbnail: "5.3.11、雷达遮罩扫描.jpg",
                         fileName: "5.3.11、雷达遮罩扫描"
                     },
-                 
+
                 ]
             },
             "map5w21787": {
@@ -981,7 +981,7 @@ var exampleConfig = {
                         thumbnail: "7.2.1、简易入门.jpg",
                         fileName: "7.2.1、简易入门"
                     },
-                   
+
                 ]
             },
         }
@@ -991,8 +991,8 @@ var exampleConfig = {
         name_en: "8、可视化",
         content: {
             "map11cddd3233231": {
-                name: "8.1、克里金",
-                name_en: "8.1、克里金",
+                name: "8.1、可视化1",
+                name_en: "8.1、可视化1",
                 content: [
                     {
                         name: "8.1.1、kriging",
@@ -1011,6 +1011,12 @@ var exampleConfig = {
                         name_en: "8.1.3、3d热力图",
                         thumbnail: "8.1.3、3d热力图.jpg",
                         fileName: "8.1.3、3d热力图"
+                    },
+                    {
+                        name: "8.1.4、风场",
+                        name_en: "8.1.4、风场",
+                        thumbnail: "8.1.4、风场.jpg",
+                        fileName: "8.1.4、风场"
                     },
                 ]
             },
