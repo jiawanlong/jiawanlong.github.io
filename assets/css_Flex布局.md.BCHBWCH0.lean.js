@@ -1,0 +1,17 @@
+import{_ as n,c as l,a0 as e,o as s}from"./chunks/framework.BYlfzdEH.js";const h=JSON.parse('{"title":"Flex布局","description":"","frontmatter":{},"headers":[],"relativePath":"css/Flex布局.md","filePath":"css/Flex布局.md"}'),i={name:"css/Flex布局.md"};function t(p,a,r,c,o,d){return s(),l("div",null,a[0]||(a[0]=[e(`<h1 id="flex布局" tabindex="-1">Flex布局 <a class="header-anchor" href="#flex布局" aria-label="Permalink to &quot;Flex布局&quot;">​</a></h1><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;div class=&quot;flex-container&quot;&gt;</span></span>
+<span class="line"><span>  &lt;div&gt;1&lt;/div&gt;</span></span>
+<span class="line"><span>  &lt;div&gt;2&lt;/div&gt;</span></span>
+<span class="line"><span>  &lt;div&gt;3&lt;/div&gt;  </span></span>
+<span class="line"><span>  &lt;div&gt;4&lt;/div&gt;  </span></span>
+<span class="line"><span>  &lt;div&gt;5&lt;/div&gt;  </span></span>
+<span class="line"><span>  &lt;div&gt;6&lt;/div&gt;  </span></span>
+<span class="line"><span>&lt;/div&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.flex-container {</span></span>
+<span class="line"><span>  display: flex;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  flex-direction：row;</span></span>
+<span class="line"><span>  flex-wrap:wrap;</span></span>
+<span class="line"><span>  justify-content:space-between	;</span></span>
+<span class="line"><span>  align-content:space-between ;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="_1、-flex-direction-主轴方向" tabindex="-1">1、 flex-direction（主轴方向） <a class="header-anchor" href="#_1、-flex-direction-主轴方向" aria-label="Permalink to &quot;1、 flex-direction（主轴方向）&quot;">​</a></h3><ul><li>row //横向显示</li><li>column //垂直显示</li><li>row-reverse //倒序横向显示</li><li>column-reverse //倒序垂直显示</li></ul><h3 id="_2、-flex-wrap-是否换行" tabindex="-1">2、 flex-wrap（是否换行） <a class="header-anchor" href="#_2、-flex-wrap-是否换行" aria-label="Permalink to &quot;2、  flex-wrap（是否换行）&quot;">​</a></h3><ul><li>nowrap //不换行</li><li>wrap //换行</li><li>wrap-reverse //倒序换行</li></ul><h3 id="_3、-justify-content-主轴对齐方式" tabindex="-1">3、 justify-content（主轴对齐方式） <a class="header-anchor" href="#_3、-justify-content-主轴对齐方式" aria-label="Permalink to &quot;3、  justify-content（主轴对齐方式）&quot;">​</a></h3><ul><li>flex-start //主轴的起点对齐</li><li>flex-end //主轴的终点对齐</li><li>center //居中对齐</li><li>space-between //两端对齐，项目之间的间隔都相等</li><li>space-around //每个项目两侧的间隔相等</li></ul><h3 id="_4、-align-content-非主轴对齐方式" tabindex="-1">4、 align-content（非主轴对齐方式） <a class="header-anchor" href="#_4、-align-content-非主轴对齐方式" aria-label="Permalink to &quot;4、  align-content（非主轴对齐方式）&quot;">​</a></h3><ul><li>flex-start //交叉轴的起点对齐</li><li>flex-end //交叉轴的终点对齐</li><li>center //居中对齐</li><li>space-between //两端对齐，项目之间的间隔都相等</li><li>space-around //每个项目两侧的间隔相等</li><li>stretch //如果项目未设置高度或设为auto，将占满整个容器的高度</li></ul><h3 id="_5、align-items-针对子项" tabindex="-1">5、align-items （针对子项） <a class="header-anchor" href="#_5、align-items-针对子项" aria-label="Permalink to &quot;5、align-items （针对子项）&quot;">​</a></h3><ul><li>flex-start //交叉轴的起点对齐</li><li>flex-end //交叉轴的终点对齐</li><li>center //居中对齐</li><li>baseline //项目的第一行文字的基线对齐</li><li>stretch //如果子元素未设置高度或设为auto，将占满整个容器的高度</li></ul>`,12)]))}const f=n(i,[["render",t]]);export{h as __pageData,f as default};

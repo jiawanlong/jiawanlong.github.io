@@ -1,0 +1,127 @@
+import{_ as a,c as n,a0 as p,o as e}from"./chunks/framework.BYlfzdEH.js";const b=JSON.parse('{"title":"Scss语法","description":"","frontmatter":{},"headers":[],"relativePath":"css/Scss语法.md","filePath":"css/Scss语法.md"}'),l={name:"css/Scss语法.md"};function i(c,s,o,t,r,d){return e(),n("div",null,s[0]||(s[0]=[p(`<h1 id="scss语法" tabindex="-1">Scss语法 <a class="header-anchor" href="#scss语法" aria-label="Permalink to &quot;Scss语法&quot;">​</a></h1><h2 id="_1、定义和使用变量" tabindex="-1">1、定义和使用变量 <a class="header-anchor" href="#_1、定义和使用变量" aria-label="Permalink to &quot;1、定义和使用变量&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>$primary-color: #333;</span></span>
+<span class="line"><span>$secondary-color: #666;</span></span>
+<span class="line"><span>$font-stack: Helvetica, sans-serif;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>body {</span></span>
+<span class="line"><span>  font: 100% $font-stack;</span></span>
+<span class="line"><span>  color: $primary-color;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>h1 {</span></span>
+<span class="line"><span>  color: $secondary-color;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="_2、全局变量" tabindex="-1">2、全局变量 <a class="header-anchor" href="#_2、全局变量" aria-label="Permalink to &quot;2、全局变量&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>body {</span></span>
+<span class="line"><span>  $secondary-color: #666 !global;</span></span>
+<span class="line"><span>  color: $secondary-color;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>h1 {</span></span>
+<span class="line"><span>  color: $secondary-color; // 现在可以访问 $secondary-color</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="_3、deep写法" tabindex="-1">3、deep写法 <a class="header-anchor" href="#_3、deep写法" aria-label="Permalink to &quot;3、deep写法&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;!-- scss写法 --&gt;</span></span>
+<span class="line"><span>::v-deep .a{</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;!-- less写法 --&gt;</span></span>
+<span class="line"><span>/deep/ .a {</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="_4、定义和使用混合宏" tabindex="-1">4、定义和使用混合宏 <a class="header-anchor" href="#_4、定义和使用混合宏" aria-label="Permalink to &quot;4、定义和使用混合宏&quot;">​</a></h2><p>使用 @mixin 来定义混合宏，并使用 @include 来调用混合宏。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>@mixin border-radius($radius) {</span></span>
+<span class="line"><span>  border-radius: $radius;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.box {</span></span>
+<span class="line"><span>  @include border-radius(10px);</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="_5、带参数的混合宏" tabindex="-1">5、带参数的混合宏 <a class="header-anchor" href="#_5、带参数的混合宏" aria-label="Permalink to &quot;5、带参数的混合宏&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>$blue: #324157;</span></span>
+<span class="line"><span>$light-blue: #3A71A8;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>@mixin colorBtn($color) {</span></span>
+<span class="line"><span>  background: $color;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  &amp;:hover {</span></span>
+<span class="line"><span>    color: $color;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    &amp;:before,</span></span>
+<span class="line"><span>    &amp;:after {</span></span>
+<span class="line"><span>      background: $color;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.blue-btn {</span></span>
+<span class="line"><span>  @include colorBtn($blue)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.light-blue-btn {</span></span>
+<span class="line"><span>  @include colorBtn($light-blue)</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="_6、继承-extend" tabindex="-1">6、继承（@extend） <a class="header-anchor" href="#_6、继承-extend" aria-label="Permalink to &quot;6、继承（@extend）&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>.button {</span></span>
+<span class="line"><span>  padding: 10px 20px;</span></span>
+<span class="line"><span>  font-size: 16px;</span></span>
+<span class="line"><span>  border-radius: 5px;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.primary-button {</span></span>
+<span class="line"><span>  @extend .button;</span></span>
+<span class="line"><span>  background-color: #3498db;</span></span>
+<span class="line"><span>  color: #fff;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.secondary-button {</span></span>
+<span class="line"><span>  @extend .button;</span></span>
+<span class="line"><span>  background-color: #2ecc71;</span></span>
+<span class="line"><span>  color: #fff;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="_7、占位选择器" tabindex="-1">7、占位选择器 <a class="header-anchor" href="#_7、占位选择器" aria-label="Permalink to &quot;7、占位选择器&quot;">​</a></h3><p>占位选择器以 % 符号开头，只有在被继承时才会生成CSS代码。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>%message {</span></span>
+<span class="line"><span>  border: 1px solid #ccc;</span></span>
+<span class="line"><span>  padding: 10px;</span></span>
+<span class="line"><span>  color: #333;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.success {</span></span>
+<span class="line"><span>  @extend %message;</span></span>
+<span class="line"><span>  border-color: green;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.error {</span></span>
+<span class="line"><span>  @extend %message;</span></span>
+<span class="line"><span>  border-color: red;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;!-- 编译后 --&gt;</span></span>
+<span class="line"><span>.success, .error {</span></span>
+<span class="line"><span>  border: 1px solid #ccc;</span></span>
+<span class="line"><span>  padding: 10px;</span></span>
+<span class="line"><span>  color: #333;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>.success {</span></span>
+<span class="line"><span>  border-color: green;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>.error {</span></span>
+<span class="line"><span>  border-color: red;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="_8、运算" tabindex="-1">8、运算 <a class="header-anchor" href="#_8、运算" aria-label="Permalink to &quot;8、运算&quot;">​</a></h3><p>示例：数值运算</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>$base-padding: 10px;</span></span>
+<span class="line"><span>$double-padding: $base-padding * 2;</span></span>
+<span class="line"><span>$half-padding: $base-padding / 2;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.container {</span></span>
+<span class="line"><span>  padding: $double-padding $half-padding;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>示例：颜色运算</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;!-- lighten和darken为内置函数 --&gt;</span></span>
+<span class="line"><span>$base-color: #3498db;</span></span>
+<span class="line"><span>$light-color: lighten($base-color, 20%);</span></span>
+<span class="line"><span>$dark-color: darken($base-color, 20%);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.button {</span></span>
+<span class="line"><span>  background-color: $base-color;</span></span>
+<span class="line"><span>  border-color: $dark-color;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  &amp;:hover {</span></span>
+<span class="line"><span>    background-color: $light-color;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="_9、自定义函数" tabindex="-1">9、自定义函数 <a class="header-anchor" href="#_9、自定义函数" aria-label="Permalink to &quot;9、自定义函数&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>@function px-to-rem($px, $base-font-size: 16px) {</span></span>
+<span class="line"><span>  @return $px / $base-font-size * 1rem;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.container {</span></span>
+<span class="line"><span>  font-size: px-to-rem(18px);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;!-- 编译后 --&gt;</span></span>
+<span class="line"><span>.container {</span></span>
+<span class="line"><span>  font-size: 1.125rem;</span></span>
+<span class="line"><span>}</span></span></code></pre></div>`,24)]))}const u=a(l,[["render",i]]);export{b as __pageData,u as default};
