@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.wfMVytlW.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"echarts/index.md","filePath":"echarts/index.md"}'),r={name:"echarts/index.md"};function n(s,c,o,d,i,p){return a(),t("div")}const f=e(r,[["render",n]]);export{m as __pageData,f as default};
