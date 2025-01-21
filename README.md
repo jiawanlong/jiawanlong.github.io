@@ -19,5 +19,5 @@
 #### 下载完成后，将完整的项目放在ngnix等容器下即可。
 
 ### 截图
-<img src="https://jiawanlong.github.io/demo.png">
-<img src="https://jiawanlong.github.io/demo1.png">
+<img src="https://jiawanlong.github.io/demo.jpg">
+<img src="https://jiawanlong.github.io/demo1.jpg">
