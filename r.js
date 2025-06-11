@@ -1,5 +1,20 @@
 
 
+document.getElementsByClassName("navcontentfixed")[0].insertAdjacentHTML('afterbegin',`
+        <div style=" z-index: 1000;
+position: fixed;
+right: 0;padding: 3px 15px;
+top: 71px;background: red;">
+    <span style="
+    font-size: 20px;
+    color: transparent;
+    background-clip: text;
+    background: linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+    
+    background-clip: text;    color: black;
+    ">开发者目前在找工作（武汉市），求内推！微信：trampjwl</span>
+</div>`)
+
 /**
 *  亲爱的朋友：
 *      很高兴你能看到这段文字，这说明你是非常热爱技术、热爱学习的
