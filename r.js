@@ -1,19 +1,19 @@
 alert("底图出不来是因为项目每天访问量巨大，用户巨多，导致token频繁过期。请在源码出更换成自己的token即可。")
 
-document.getElementsByClassName("navcontentfixed")[0].insertAdjacentHTML('afterbegin',`
-        <div style=" z-index: 1000;
-position: fixed;
-right: 0;padding: 3px 15px;
-top: 71px;background: red;">
-    <span style="
-    font-size: 20px;
-    color: transparent;
-    background-clip: text;
-    background: linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+// document.getElementsByClassName("navcontentfixed")[0].insertAdjacentHTML('afterbegin',`
+//         <div style=" z-index: 1000;
+// position: fixed;
+// right: 0;padding: 3px 15px;
+// top: 71px;background: red;">
+//     <span style="
+//     font-size: 20px;
+//     color: transparent;
+//     background-clip: text;
+//     background: linear-gradient(120deg, #bd34fe 30%, #41d1ff);
     
-    background-clip: text;    color: black;
-    ">开发者目前在找工作（武汉市），求内推！微信：trampjwl</span>
-</div>`)
+//     background-clip: text;    color: black;
+//     ">开发者目前在找工作（武汉市），求内推！微信：trampjwl</span>
+// </div>`)
 
 /**
 *  亲爱的朋友：
