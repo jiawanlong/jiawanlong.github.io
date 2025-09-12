@@ -14,6 +14,7 @@
 //     ">开发者目前在找工作（武汉市），求内推！微信：trampjwl</span>
 // </div>`)
 console.log('我支持乌克兰');
+$(".navbar-brand h1").css('background','linear-gradient(to bottom, #0057B7 50%, #FFD701 50%)');$(".navbar-brand h1").css('background-clip','text');$(".navbar-brand h1").css('font-size','34px');
 /**
 *  亲爱的朋友：
 *      很高兴你能看到这段文字，这说明你是非常热爱技术、热爱学习的
