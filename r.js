@@ -13,7 +13,7 @@
 //     background-clip: text;    color: black;
 //     ">开发者目前在找工作（武汉市），求内推！微信：trampjwl</span>
 // </div>`)
-
+console.log('我支持乌克兰');
 /**
 *  亲爱的朋友：
 *      很高兴你能看到这段文字，这说明你是非常热爱技术、热爱学习的
