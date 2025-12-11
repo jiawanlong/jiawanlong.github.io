@@ -1,20 +1,20 @@
 
-// document.getElementsByClassName("navcontentfixed")[0].insertAdjacentHTML('afterbegin',`
-//         <div style=" z-index: 1000;
-// position: fixed;
-// right: 0;padding: 3px 15px;
-// top: 71px;background: red;">
-//     <span style="
-//     font-size: 20px;
-//     color: transparent;
-//     background-clip: text;
-//     background: linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+ document.getElementsByClassName("navcontentfixed")[0].insertAdjacentHTML('afterbegin',`
+        <div style=" z-index: 1000;
+ position: fixed;
+ right: 0;padding: 3px 15px;
+ top: 71px;background: red;">
+    <span style="
+  font-size: 20px;
+  color: transparent;
+    background-clip: text;
+     background: linear-gradient(120deg, #bd34fe 30%, #41d1ff);
     
-//     background-clip: text;    color: black;
-//     ">开发者目前在找工作（武汉市），求内推！微信：trampjwl</span>
-// </div>`)
+    background-clip: text;    color: black;
+    ">航天宏图，还我工资！</span>
+ </div>`)
 
-alert("航天宏图，还我工资！")
+alert("航天宏图，还我工资！拖欠我的是工资，不是绩效，不是奖金。我走的正常离职，不是被裁，也不是被迫，我只想要回属于我的工资。")
 console.log('我支持乌克兰');
 $(".navbar-brand h1").css('background','linear-gradient(to bottom, #0057B7 50%, #FFD701 50%)');$(".navbar-brand h1").css('background-clip','text');$(".navbar-brand h1").css('font-size','34px');
 /**
