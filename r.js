@@ -5,7 +5,7 @@
  right: 0;padding: 3px 15px;
  top: 71px;background: red;">
     <span style="
-  font-size: 20px;
+  font-size: 42px;
   color: transparent;
     background-clip: text;
      background: linear-gradient(120deg, #bd34fe 30%, #41d1ff);
