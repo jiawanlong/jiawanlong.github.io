@@ -17,6 +17,7 @@
 alert("航天宏图，还我工资！拖欠我的是工资，不是绩效，不是奖金。我走的正常离职，不是被裁，也不是被迫，我只想要回属于我的工资。")
 console.log('我支持乌克兰');
 $(".navbar-brand h1").css('background','linear-gradient(to bottom, #0057B7 50%, #FFD701 50%)');$(".navbar-brand h1").css('background-clip','text');$(".navbar-brand h1").css('font-size','34px');
+return;
 /**
 *  亲爱的朋友：
 *      很高兴你能看到这段文字，这说明你是非常热爱技术、热爱学习的
