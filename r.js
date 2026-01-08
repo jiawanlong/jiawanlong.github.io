@@ -13,6 +13,120 @@
     background-clip: text;    color: black;
     ">航天宏图，还我工资！</span>
  </div>`)
+
+﻿
+createModal1();
+function createModal1() {
+        // 创建弹窗遮罩层
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+        overlay.style.display = 'flex';
+        overlay.style.justifyContent = 'center';
+        overlay.style.alignItems = 'center';
+        overlay.style.zIndex = '1000000000000';
+        
+        // 创建弹窗容器
+        const modal = document.createElement('div');
+        modal.style.width = '80%';
+        modal.style.height = '80%';
+        modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // 黑色，透明度80%
+        modal.style.padding = '1%'; // 5%内边距
+        modal.style.borderRadius = '12px';
+        modal.style.boxSizing = 'border-box';
+        modal.style.position = 'relative';
+        modal.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.4)';
+        modal.style.display = 'flex';
+        modal.style.flexDirection = 'column';
+        modal.style.justifyContent = 'center';
+        modal.style.alignItems = 'center';
+        modal.style.overflow = 'auto';
+        
+        // 创建H1标题
+        const title = document.createElement('h1');
+        title.textContent = '致全国GIS行业从业者的紧急警示公告：';
+        title.style.color = 'white';
+        title.style.fontFamily = 'Arial, sans-serif';
+        title.style.fontSize = 'clamp(24px, 4vw, 48px)';
+        title.style.textAlign = 'left';
+        title.style.margin = '0';
+        title.style.marginBottom = '2rem';
+        title.style.padding = '0';
+        title.style.fontWeight = 'bold';
+        title.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.5)';
+        
+        // 创建描述文本
+        const description1 = document.createElement('p');
+        description1.textContent = '本人作为航天宏图（688066）前技术经理，不得不在此向全行业发出紧急严肃警告。1：请所有GIS从业者重新评估与航天宏图的雇佣及合作关系；2：建议行业组织将此类严重失信企业列入风险警示名单；3：呼吁各企业坚守对技术人才的基本尊重与合法权益保障；4：提醒求职者审慎选择，优先考虑有良好薪酬信用的雇主；我们共同建立和维护的GIS行业声誉，绝不能被少数失信企业摧毁。拒绝沉默，共同维护GIS行业的职业尊严与发展环境！';
+        description1.style.color = 'rgba(255, 255, 255, 0.9)';
+        description1.style.fontFamily = 'Arial, sans-serif';
+        description1.style.fontSize = 'clamp(16px, 2vw, 24px)';
+        description1.style.textAlign = 'left';
+        description1.style.fontSize = '3rem';
+        description1.style.maxWidth = '80%';
+        description1.style.marginTop = '30px';
+        description1.style.lineHeight = '4.5rem';
+        
+        
+        // 创建关闭按钮
+        const closeButton = document.createElement('button');
+        closeButton.textContent = '×';
+        closeButton.style.position = 'absolute';
+        closeButton.style.top = '20px';
+        closeButton.style.right = '20px';
+        closeButton.style.width = '40px';
+        closeButton.style.height = '40px';
+        closeButton.style.borderRadius = '50%';
+        closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+        closeButton.style.color = 'white';
+        closeButton.style.border = 'none';
+        closeButton.style.fontSize = '28px';
+        closeButton.style.cursor = 'pointer';
+        closeButton.style.display = 'flex';
+        closeButton.style.justifyContent = 'center';
+        closeButton.style.alignItems = 'center';
+        closeButton.style.transition = 'all 0.3s ease';
+        
+        // 添加按钮悬停效果
+        closeButton.onmouseover = function() {
+            this.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+            this.style.transform = 'scale(1.1)';
+        };
+        
+        closeButton.onmouseout = function() {
+            this.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+            this.style.transform = 'scale(1)';
+        };
+        
+        // 添加关闭功能
+        closeButton.addEventListener('click', function() {
+            document.body.removeChild(overlay);
+        });
+        
+        // 点击遮罩层也可以关闭弹窗
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                document.body.removeChild(overlay);
+            }
+        });
+        
+
+        
+        // 组装弹窗
+        modal.appendChild(closeButton);
+        modal.appendChild(title);
+        modal.appendChild(description1);
+        overlay.appendChild(modal);
+        
+        // 添加到页面
+        document.body.appendChild(overlay);
+        
+        
+    }
 createModal();
 function createModal() {
         // 创建弹窗遮罩层
