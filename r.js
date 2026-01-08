@@ -14,230 +14,499 @@
     ">航天宏图，还我工资！</span>
  </div>`)
 
-﻿
-createModal1();
-function createModal1() {
-        // 创建弹窗遮罩层
-        const overlay = document.createElement('div');
-        overlay.style.position = 'fixed';
-        overlay.style.top = '0';
-        overlay.style.left = '0';
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-        overlay.style.display = 'flex';
-        overlay.style.justifyContent = 'center';
-        overlay.style.alignItems = 'center';
-        overlay.style.zIndex = '1000000000000';
-        
-        // 创建弹窗容器
-        const modal = document.createElement('div');
-        modal.style.width = '80%';
-        modal.style.height = '80%';
-        modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // 黑色，透明度80%
-        modal.style.padding = '1%'; // 5%内边距
-        modal.style.borderRadius = '12px';
-        modal.style.boxSizing = 'border-box';
-        modal.style.position = 'relative';
-        modal.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.4)';
-        modal.style.display = 'flex';
-        modal.style.flexDirection = 'column';
-        modal.style.justifyContent = 'center';
-        modal.style.alignItems = 'center';
-        modal.style.overflow = 'auto';
-        
-        // 创建H1标题
-        const title = document.createElement('h1');
-        title.textContent = '致全国GIS行业从业者的紧急警示公告：';
-        title.style.color = 'white';
-        title.style.fontFamily = 'Arial, sans-serif';
-        title.style.fontSize = 'clamp(24px, 4vw, 48px)';
-        title.style.textAlign = 'left';
-        title.style.margin = '0';
-        title.style.marginBottom = '2rem';
-        title.style.padding = '0';
-        title.style.fontWeight = 'bold';
-        title.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.5)';
-        
-        // 创建描述文本
-        const description1 = document.createElement('p');
-        description1.textContent = '本人作为航天宏图（688066）前技术经理，不得不在此向全行业发出紧急严肃警告。1：请所有GIS从业者重新评估与航天宏图的雇佣及合作关系；2：建议行业组织将此类严重失信企业列入风险警示名单；3：呼吁各企业坚守对技术人才的基本尊重与合法权益保障；4：提醒求职者审慎选择，优先考虑有良好薪酬信用的雇主；我们共同建立和维护的GIS行业声誉，绝不能被少数失信企业摧毁。拒绝沉默，共同维护GIS行业的职业尊严与发展环境！';
-        description1.style.color = 'rgba(255, 255, 255, 0.9)';
-        description1.style.fontFamily = 'Arial, sans-serif';
-        description1.style.fontSize = 'clamp(16px, 2vw, 24px)';
-        description1.style.textAlign = 'left';
-        description1.style.fontSize = '3rem';
-        description1.style.maxWidth = '80%';
-        description1.style.marginTop = '30px';
-        description1.style.lineHeight = '4.5rem';
-        
-        
-        // 创建关闭按钮
-        const closeButton = document.createElement('button');
-        closeButton.textContent = '×';
-        closeButton.style.position = 'absolute';
-        closeButton.style.top = '20px';
-        closeButton.style.right = '20px';
-        closeButton.style.width = '40px';
-        closeButton.style.height = '40px';
-        closeButton.style.borderRadius = '50%';
-        closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
-        closeButton.style.color = 'white';
-        closeButton.style.border = 'none';
-        closeButton.style.fontSize = '28px';
-        closeButton.style.cursor = 'pointer';
-        closeButton.style.display = 'flex';
-        closeButton.style.justifyContent = 'center';
-        closeButton.style.alignItems = 'center';
-        closeButton.style.transition = 'all 0.3s ease';
-        
-        // 添加按钮悬停效果
-        closeButton.onmouseover = function() {
-            this.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
-            this.style.transform = 'scale(1.1)';
-        };
-        
-        closeButton.onmouseout = function() {
-            this.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
-            this.style.transform = 'scale(1)';
-        };
-        
-        // 添加关闭功能
-        closeButton.addEventListener('click', function() {
-            document.body.removeChild(overlay);
-        });
-        
-        // 点击遮罩层也可以关闭弹窗
-        overlay.addEventListener('click', function(e) {
-            if (e.target === overlay) {
-                document.body.removeChild(overlay);
-            }
-        });
-        
-
-        
-        // 组装弹窗
-        modal.appendChild(closeButton);
-        modal.appendChild(title);
-        modal.appendChild(description1);
-        overlay.appendChild(modal);
-        
-        // 添加到页面
-        document.body.appendChild(overlay);
-        
-        
-    }
 createModal();
-function createModal() {
-        // 创建弹窗遮罩层
-        const overlay = document.createElement('div');
-        overlay.style.position = 'fixed';
-        overlay.style.top = '0';
-        overlay.style.left = '0';
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-        overlay.style.display = 'flex';
-        overlay.style.justifyContent = 'center';
-        overlay.style.alignItems = 'center';
-        overlay.style.zIndex = '1000000000000';
-        
-        // 创建弹窗容器
-        const modal = document.createElement('div');
-        modal.style.width = '80%';
-        modal.style.height = '80%';
-        modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // 黑色，透明度80%
-        modal.style.padding = '1%'; // 5%内边距
-        modal.style.borderRadius = '12px';
-        modal.style.boxSizing = 'border-box';
-        modal.style.position = 'relative';
-        modal.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.4)';
-        modal.style.display = 'flex';
-        modal.style.flexDirection = 'column';
-        modal.style.justifyContent = 'center';
-        modal.style.alignItems = 'center';
-        modal.style.overflow = 'auto';
-        
-        // 创建H1标题
-        const title = document.createElement('h1');
-        title.textContent = '致航天宏图及投资者、合作者与相关方的正告：';
-        title.style.color = 'white';
-        title.style.fontFamily = 'Arial, sans-serif';
-        title.style.fontSize = 'clamp(24px, 4vw, 48px)';
-        title.style.textAlign = 'left';
-        title.style.margin = '0';
-        title.style.marginBottom = '2rem';
-        title.style.padding = '0';
-        title.style.fontWeight = 'bold';
-        title.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.5)';
-        
-        // 创建描述文本
-        const description = document.createElement('p');
-        description.textContent = '我是航天宏图（股票代码：688066）前技术经理（工号10938）。公司自2023年12月起长期拖欠工资，经仲裁调解承诺分期支付却拒不履行，现已进入法院强制执行阶段。此举严重侵害劳动者权益，亦暴露公司内部管理及诚信危机。特此正告：请航天宏图立即支付全部欠薪！该公司的诚信体系已崩溃，内部管理严重失序，存在重大合规风险。请立即重新评估与航天宏图的合作关系及投资价值！';
-        description.style.color = 'rgba(255, 255, 255, 0.9)';
-        description.style.fontFamily = 'Arial, sans-serif';
-        description.style.fontSize = 'clamp(16px, 2vw, 24px)';
-        description.style.textAlign = 'left';
-        description.style.fontSize = '3rem';
-        description.style.maxWidth = '80%';
-        description.style.marginTop = '30px';
-        description.style.lineHeight = '4.5rem';
-        
-        // 创建关闭按钮
-        const closeButton = document.createElement('button');
-        closeButton.textContent = '×';
-        closeButton.style.position = 'absolute';
-        closeButton.style.top = '20px';
-        closeButton.style.right = '20px';
-        closeButton.style.width = '40px';
-        closeButton.style.height = '40px';
-        closeButton.style.borderRadius = '50%';
-        closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
-        closeButton.style.color = 'white';
-        closeButton.style.border = 'none';
-        closeButton.style.fontSize = '28px';
-        closeButton.style.cursor = 'pointer';
-        closeButton.style.display = 'flex';
-        closeButton.style.justifyContent = 'center';
-        closeButton.style.alignItems = 'center';
-        closeButton.style.transition = 'all 0.3s ease';
-        
-        // 添加按钮悬停效果
-        closeButton.onmouseover = function() {
-            this.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
-            this.style.transform = 'scale(1.1)';
-        };
-        
-        closeButton.onmouseout = function() {
-            this.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
-            this.style.transform = 'scale(1)';
-        };
-        
-        // 添加关闭功能
-        closeButton.addEventListener('click', function() {
-            document.body.removeChild(overlay);
-        });
-        
-        // 点击遮罩层也可以关闭弹窗
-        overlay.addEventListener('click', function(e) {
-            if (e.target === overlay) {
-                document.body.removeChild(overlay);
-            }
-        });
-        
 
+function createModal() {
+    // 创建弹窗遮罩层
+    const overlay = document.createElement('div');
+    Object.assign(overlay.style, {
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: '999999',
+        backdropFilter: 'blur(5px)'
+    });
+    
+    // 创建弹窗容器
+    const modal = document.createElement('div');
+    Object.assign(modal.style, {
+        width: '85%',
+        maxWidth: '1200px',
+        minHeight: '60%',
+        maxHeight: '85%',
+        backgroundColor: 'rgba(20, 20, 30, 0.95)',
+        padding: '40px',
+        borderRadius: '20px',
+        boxSizing: 'border-box',
+        position: 'relative',
+        boxShadow: '0 15px 50px rgba(0, 0, 0, 0.6)',
+        border: '2px solid rgba(255, 255, 255, 0.1)',
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'auto',
+        fontFamily: "'Microsoft YaHei', 'Segoe UI', Arial, sans-serif"
+    });
+    
+    // 创建标题
+    const title = document.createElement('h1');
+    title.textContent = '🚨 致全国GIS行业从业者的紧急警示公告：';
+    Object.assign(title.style, {
+        color: '#ff4444',
+        fontSize: 'clamp(28px, 3.5vw, 42px)',
+        textAlign: 'center',
+        margin: '0 0 30px 0',
+        paddingBottom: '20px',
+        fontWeight: '800',
+        textShadow: '0 2px 10px rgba(255, 68, 68, 0.4)',
+        borderBottom: '3px solid rgba(255, 68, 68, 0.3)',
+        lineHeight: '1.4'
+    });
+    
+    // 创建内容容器
+    const contentContainer = document.createElement('div');
+    contentContainer.style.cssText = `
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 10px 5px;
+        overflow-y: auto;
+    `;
+    
+    // 警告声明段落
+    const warningIntro = document.createElement('p');
+    warningIntro.innerHTML = '<span style="color:#ff9900; font-weight:bold;">⚠️ 本人作为航天宏图（股票代码：688066）前技术经理</span>，不得不在此向全行业发出<strong style="color:#ff4444; font-size:1.1em;">紧急严肃警告</strong>：';
+    Object.assign(warningIntro.style, {
+        color: '#e0e0ff',
+        fontSize: 'clamp(18px, 2vw, 22px)',
+        lineHeight: '1.8',
+        margin: '0'
+    });
+    
+    // 关键建议部分
+    const keyPoints = document.createElement('div');
+    keyPoints.innerHTML = `
+        <div style="
+            background: rgba(255, 68, 68, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #ff4444;
+            margin: 15px 0;
+        ">
+            <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                <div style="
+                    background: #ff4444;
+                    color: white;
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    margin-right: 12px;
+                    flex-shrink: 0;
+                ">1</div>
+                <span style="color: #ffdddd; font-size: 1.05em;">
+                    请所有GIS从业者重新评估与<strong style="color:#ff9999">航天宏图</strong>的雇佣及合作关系
+                </span>
+            </div>
+            
+            <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                <div style="
+                    background: #ff8800;
+                    color: white;
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    margin-right: 12px;
+                    flex-shrink: 0;
+                ">2</div>
+                <span style="color: #ffdddd; font-size: 1.05em;">
+                    建议行业组织将此类严重失信企业列入<strong style="color:#ffaa66">风险警示名单</strong>
+                </span>
+            </div>
+            
+            <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                <div style="
+                    background: #44aa44;
+                    color: white;
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    margin-right: 12px;
+                    flex-shrink: 0;
+                ">3</div>
+                <span style="color: #ddffdd; font-size: 1.05em;">
+                    呼吁各企业坚守对技术人才的<strong style="color:#88ff88">基本尊重与合法权益保障</strong>
+                </span>
+            </div>
+            
+            <div style="display: flex; align-items: flex-start;">
+                <div style="
+                    background: #4488ff;
+                    color: white;
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                    margin-right: 12px;
+                    flex-shrink: 0;
+                ">4</div>
+                <span style="color: #ddddff; font-size: 1.05em;">
+                    提醒求职者审慎选择，优先考虑有<strong style="color:#8888ff">良好薪酬信用的雇主</strong>
+                </span>
+            </div>
+        </div>
+    `;
+    
+    // 呼吁段落
+    const appeal = document.createElement('p');
+    appeal.innerHTML = '💎 <strong style="color:#44aaff">我们共同建立和维护的GIS行业声誉</strong>，绝不能被少数失信企业摧毁。';
+    Object.assign(appeal.style, {
+        color: '#aaddff',
+        fontSize: 'clamp(18px, 2vw, 22px)',
+        lineHeight: '1.8',
+        margin: '20px 0 10px 0',
+        textAlign: 'center',
+        padding: '15px',
+        backgroundColor: 'rgba(68, 170, 255, 0.1)',
+        borderRadius: '10px',
+        fontWeight: '600'
+    });
+    
+    // 行动号召段落
+    const callToAction = document.createElement('p');
+    callToAction.innerHTML = '🔥 <strong style="color:#ff4444; font-size:1.2em;">拒绝沉默，共同维护GIS行业的职业尊严与发展环境！</strong>';
+    Object.assign(callToAction.style, {
+        color: '#ffcccc',
+        fontSize: 'clamp(20px, 2.2vw, 26px)',
+        lineHeight: '1.6',
+        margin: '30px 0 10px 0',
+        textAlign: 'center',
+        padding: '20px',
+        backgroundColor: 'rgba(255, 68, 68, 0.15)',
+        borderRadius: '12px',
+        fontWeight: '700',
+        border: '2px solid rgba(255, 68, 68, 0.3)'
+    });
+    
+    // 创建关闭按钮
+    const closeButton = document.createElement('button');
+    closeButton.innerHTML = '&times;';
+    closeButton.title = '关闭公告';
+    Object.assign(closeButton.style, {
+        position: 'absolute',
+        top: '15px',
+        right: '15px',
+        width: '45px',
+        height: '45px',
+        borderRadius: '50%',
+        backgroundColor: 'rgba(255, 68, 68, 0.2)',
+        color: 'white',
+        border: '2px solid rgba(255, 255, 255, 0.3)',
+        fontSize: '32px',
+        cursor: 'pointer',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        transition: 'all 0.3s ease',
+        fontWeight: '300'
+    });
+    
+    // 添加按钮悬停效果
+    closeButton.onmouseover = function() {
+        this.style.backgroundColor = 'rgba(255, 68, 68, 0.4)';
+        this.style.transform = 'scale(1.15) rotate(90deg)';
+        this.style.borderColor = 'rgba(255, 255, 255, 0.6)';
+    };
+    
+    closeButton.onmouseout = function() {
+        this.style.backgroundColor = 'rgba(255, 68, 68, 0.2)';
+        this.style.transform = 'scale(1) rotate(0deg)';
+        this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+    };
+    
+    // 添加关闭功能
+    closeButton.addEventListener('click', function() {
+        document.body.removeChild(overlay);
+    });
+    
+ 
+    
+    // 组装弹窗
+    contentContainer.appendChild(warningIntro);
+    contentContainer.appendChild(keyPoints);
+    contentContainer.appendChild(appeal);
+    contentContainer.appendChild(callToAction);
+    
+    modal.appendChild(closeButton);
+    modal.appendChild(title);
+    modal.appendChild(contentContainer);
+    overlay.appendChild(modal);
+    
+    // 添加到页面
+    document.body.appendChild(overlay);
+    
+    // 添加淡入动画
+    requestAnimationFrame(() => {
+        overlay.style.opacity = '0';
+        overlay.style.transition = 'opacity 0.4s ease';
+        requestAnimationFrame(() => {
+            overlay.style.opacity = '1';
+        });
+    });
+}
+
+createModal();
+
+function createModal() {
+    // 创建弹窗遮罩层
+    const overlay = document.createElement('div');
+    Object.assign(overlay.style, {
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'rgba(0, 0, 0, 0.92)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: '999999',
+        backdropFilter: 'blur(6px)',
+        fontFamily: "'Microsoft YaHei', 'Segoe UI', Arial, sans-serif"
+    });
+    
+    // 创建弹窗容器
+    const modal = document.createElement('div');
+    Object.assign(modal.style, {
+        width: '85%',
+        maxWidth: '1000px',
+        backgroundColor: 'rgba(10, 10, 20, 0.97)',
+        padding: '40px 50px',
+        borderRadius: '18px',
+        boxSizing: 'border-box',
+        position: 'relative',
+        boxShadow: '0 20px 60px rgba(0, 0, 0, 0.8)',
+        border: '3px solid rgba(255, 50, 50, 0.4)',
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'hidden' // 移除滚动条
+    });
+    
+    // 创建标题
+    const title = document.createElement('h1');
+    title.innerHTML = '⚖️ 致航天宏图及投资者、合作者与相关方的正告：';
+    Object.assign(title.style, {
+        color: '#ff5555',
+        fontSize: 'clamp(24px, 2.8vw, 34px)',
+        textAlign: 'center',
+        margin: '0 0 25px 0',
+        paddingBottom: '15px',
+        fontWeight: '800',
+        textShadow: '0 2px 8px rgba(255, 85, 85, 0.5)',
+        borderBottom: '3px solid rgba(255, 85, 85, 0.4)',
+        lineHeight: '1.3'
+    });
+    
+    // 创建内容容器
+    const contentContainer = document.createElement('div');
+    contentContainer.style.cssText = `
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 5px 0;
+    `;
+    
+    // 身份声明部分
+    const identitySection = document.createElement('div');
+    identitySection.innerHTML = `
+        <div style="
+            background: rgba(255, 85, 85, 0.1);
+            padding: 18px 22px;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            border-left: 4px solid #ff5555;
+        ">
+            <div style="color: #ffaaaa; font-size: clamp(16px, 1.8vw, 20px);">
+                <span style="color: #ffdd88; font-weight: bold;">📌 本人身份声明：</span>
+                航天宏图（股票代码：<strong style="color:#ff9999">688066</strong>）前技术经理
+                <span style="color: #88ddff; font-weight: bold;">（工号10938）</span>
+            </div>
+        </div>
+    `;
+    
+    // 事实陈述与法律定性合并部分
+    const factsLegalSection = document.createElement('div');
+    factsLegalSection.innerHTML = `
+        <div style="
+            background: rgba(255, 150, 50, 0.1);
+            padding: 20px 25px;
+            border-radius: 10px;
+            border-left: 4px solid #ff9632;
+        ">
+            <div style="color: #ffcc99; font-size: clamp(16px, 1.8vw, 20px); line-height: 1.7;">
+                <span style="color: #ffaa66; font-weight: bold; font-size: 1.1em;">📅 事实陈述与法律定性：</span>
+                公司自<strong style="color:#ff9966">2023年12月起</strong>长期拖欠工资，经仲裁调解承诺分期支付却<strong style="color:#ff6666">拒不履行</strong>，现已进入<strong style="color:#ff3333">法院强制执行阶段</strong>。此举<strong style="color:#ff7777">严重侵害劳动者权益</strong>，亦暴露公司内部管理及<strong style="color:#ff5555">诚信危机</strong>，已构成<strong style="color:#ff3333">严重失信行为</strong>。
+            </div>
+        </div>
+    `;
+    
+    // 对公司的正告部分
+    const warningToCompany = document.createElement('div');
+    warningToCompany.innerHTML = `
+        <div style="
+            background: rgba(255, 50, 50, 0.2);
+            padding: 22px 25px;
+            border-radius: 10px;
+            margin-top: 5px;
+            border: 3px solid rgba(255, 50, 50, 0.5);
+        ">
+            <div style="color: #ffdddd; font-size: clamp(18px, 2vw, 22px); font-weight: bold; text-align: center; margin-bottom: 10px;">
+                🚨 特此正告航天宏图：
+            </div>
+            <div style="color: #ffcccc; font-size: clamp(18px, 2vw, 22px); text-align: center; font-weight: 700; line-height: 1.5;">
+                立即支付全部欠薪！
+            </div>
+        </div>
+    `;
+    
+    // 对投资者和合作者的警告部分
+    const warningToInvestors = document.createElement('div');
+    warningToInvestors.innerHTML = `
+        <div style="
+            background: rgba(255, 100, 100, 0.15);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 5px;
+        ">
+            <div style="color: #ffbbbb; font-size: clamp(16px, 1.8vw, 20px); margin-bottom: 15px; line-height: 1.6;">
+                <span style="color: #ff7777; font-weight: bold; font-size: 1.1em;">📢 郑重警示：</span>
+                该公司<strong style="color:#ff5555">诚信体系已崩溃</strong>，内部管理<strong style="color:#ff5555">严重失序</strong>，存在<strong style="color:#ff3333">重大合规风险</strong>。
+            </div>
+            
+            <div style="
+                background: rgba(255, 0, 0, 0.2);
+                padding: 18px;
+                border-radius: 8px;
+                margin-top: 15px;
+                text-align: center;
+                border: 2px dashed rgba(255, 100, 100, 0.5);
+            ">
+                <div style="color: #ffaaaa; font-size: clamp(18px, 2vw, 22px); font-weight: 800; line-height: 1.4;">
+                    请立即重新评估与航天宏图的
+                    <span style="color:#ff6666; text-shadow: 0 0 8px rgba(255, 100, 100, 0.5); display: block; margin-top: 5px;">
+                        合作关系及投资价值！
+                    </span>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // 创建关闭按钮
+    const closeButton = document.createElement('button');
+    closeButton.innerHTML = '&times;';
+    closeButton.title = '关闭正告';
+    Object.assign(closeButton.style, {
+        position: 'absolute',
+        top: '18px',
+        right: '18px',
+        width: '46px',
+        height: '46px',
+        borderRadius: '50%',
+        backgroundColor: 'rgba(255, 85, 85, 0.25)',
+        color: '#ffdddd',
+        border: '2px solid rgba(255, 85, 85, 0.5)',
+        fontSize: '34px',
+        cursor: 'pointer',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        transition: 'all 0.3s ease',
+        fontWeight: '300',
+        zIndex: '10'
+    });
+    
+    // 添加按钮悬停效果
+    closeButton.onmouseover = function() {
+        this.style.backgroundColor = 'rgba(255, 85, 85, 0.4)';
+        this.style.transform = 'scale(1.15) rotate(180deg)';
+        this.style.borderColor = 'rgba(255, 120, 120, 0.8)';
+        this.style.color = 'white';
+    };
+    
+    closeButton.onmouseout = function() {
+        this.style.backgroundColor = 'rgba(255, 85, 85, 0.25)';
+        this.style.transform = 'scale(1) rotate(0deg)';
+        this.style.borderColor = 'rgba(255, 85, 85, 0.5)';
+        this.style.color = '#ffdddd';
+    };
+    
+    // 添加关闭功能（仅通过按钮关闭）
+    closeButton.addEventListener('click', function() {
+        document.body.removeChild(overlay);
+    });
+    
+    // 移除点击遮罩层关闭功能
+    // overlay.addEventListener('click', function(e) {
+    //     if (e.target === overlay) {
+    //         document.body.removeChild(overlay);
+    //     }
+    // });
+    
+    // 移除ESC键关闭功能
+    // document.addEventListener('keydown', function(e) {
+    //     if (e.key === 'Escape' && document.body.contains(overlay)) {
+    //         document.body.removeChild(overlay);
+    //     }
+    // });
+    
+    // 组装弹窗内容
+    contentContainer.appendChild(identitySection);
+    contentContainer.appendChild(factsLegalSection);
+    contentContainer.appendChild(warningToCompany);
+    contentContainer.appendChild(warningToInvestors);
+    
+    modal.appendChild(closeButton);
+    modal.appendChild(title);
+    modal.appendChild(contentContainer);
+    overlay.appendChild(modal);
+    
+    // 添加到页面
+    document.body.appendChild(overlay);
+    
+    // 添加淡入动画
+    requestAnimationFrame(() => {
+        overlay.style.opacity = '0';
+        overlay.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        modal.style.transform = 'translateY(30px)';
+        modal.style.transition = 'transform 0.5s ease';
         
-        // 组装弹窗
-        modal.appendChild(closeButton);
-        modal.appendChild(title);
-        modal.appendChild(description);
-        overlay.appendChild(modal);
-        
-        // 添加到页面
-        document.body.appendChild(overlay);
-        
-        
-    }
+        requestAnimationFrame(() => {
+            overlay.style.opacity = '1';
+            modal.style.transform = 'translateY(0)';
+        });
+    });
+}
 
 alert("航天宏图，还我工资！拖欠我的是工资，不是绩效，不是奖金。我走的正常离职，不是被裁，也不是被迫，我只想要回属于我的工资。")
 console.log('我支持乌克兰');
