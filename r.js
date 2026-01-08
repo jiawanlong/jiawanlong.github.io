@@ -14,9 +14,8 @@
     ">航天宏图，还我工资！</span>
  </div>`)
 
-createModal();
-
-function createModal() {
+// 第一个弹窗：GIS行业警示
+function createGISWarningModal() {
     // 创建弹窗遮罩层
     const overlay = document.createElement('div');
     Object.assign(overlay.style, {
@@ -127,7 +126,7 @@ function createModal() {
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
-                    justify-content: center;
+                    justifyContent: center;
                     font-weight: bold;
                     margin-right: 12px;
                     flex-shrink: 0;
@@ -146,7 +145,7 @@ function createModal() {
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
-                    justify-content: center;
+                    justifyContent: center;
                     font-weight: bold;
                     margin-right: 12px;
                     flex-shrink: 0;
@@ -165,7 +164,7 @@ function createModal() {
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
-                    justify-content: center;
+                    justifyContent: center;
                     font-weight: bold;
                     margin-right: 12px;
                     flex-shrink: 0;
@@ -249,8 +248,6 @@ function createModal() {
         document.body.removeChild(overlay);
     });
     
- 
-    
     // 组装弹窗
     contentContainer.appendChild(warningIntro);
     contentContainer.appendChild(keyPoints);
@@ -275,9 +272,8 @@ function createModal() {
     });
 }
 
-createModal();
-
-function createModal() {
+// 第二个弹窗：正告航天宏图
+function createCompanyWarningModal() {
     // 创建弹窗遮罩层
     const overlay = document.createElement('div');
     Object.assign(overlay.style, {
@@ -290,7 +286,7 @@ function createModal() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        zIndex: '999999',
+        zIndex: '999998', // 注意z-index比第一个低，这样第一个在第二个上面
         backdropFilter: 'blur(6px)',
         fontFamily: "'Microsoft YaHei', 'Segoe UI', Arial, sans-serif"
     });
@@ -298,7 +294,7 @@ function createModal() {
     // 创建弹窗容器
     const modal = document.createElement('div');
     Object.assign(modal.style, {
-        width: '85%',
+        width: '90%',
         maxWidth: '1000px',
         backgroundColor: 'rgba(10, 10, 20, 0.97)',
         padding: '40px 50px',
@@ -309,7 +305,8 @@ function createModal() {
         border: '3px solid rgba(255, 50, 50, 0.4)',
         display: 'flex',
         flexDirection: 'column',
-        overflow: 'hidden' // 移除滚动条
+        overflow: 'auto', // 修改为auto，允许滚动
+        maxHeight: '85vh' // 添加最大高度
     });
     
     // 创建标题
@@ -335,6 +332,7 @@ function createModal() {
         flex-direction: column;
         gap: 20px;
         padding: 5px 0;
+        overflow-y: auto; // 内容容器可滚动
     `;
     
     // 身份声明部分
@@ -461,24 +459,10 @@ function createModal() {
         this.style.color = '#ffdddd';
     };
     
-    // 添加关闭功能（仅通过按钮关闭）
+    // 添加关闭功能
     closeButton.addEventListener('click', function() {
         document.body.removeChild(overlay);
     });
-    
-    // 移除点击遮罩层关闭功能
-    // overlay.addEventListener('click', function(e) {
-    //     if (e.target === overlay) {
-    //         document.body.removeChild(overlay);
-    //     }
-    // });
-    
-    // 移除ESC键关闭功能
-    // document.addEventListener('keydown', function(e) {
-    //     if (e.key === 'Escape' && document.body.contains(overlay)) {
-    //         document.body.removeChild(overlay);
-    //     }
-    // });
     
     // 组装弹窗内容
     contentContainer.appendChild(identitySection);
@@ -507,6 +491,19 @@ function createModal() {
         });
     });
 }
+
+// 现在您需要分别调用两个函数来显示两个不同的弹窗
+// 例如：createGISWarningModal(); 和 createCompanyWarningModal();
+
+// 或者如果您想同时显示两个弹窗，可以这样：
+// 注意：第二个弹窗的z-index较低，所以第一个会显示在上面
+
+// 示例调用：
+createGISWarningModal(); // 显示第一个弹窗
+// 如果需要同时显示第二个，可以稍后调用：
+setTimeout(() => {
+    createCompanyWarningModal(); // 显示第二个弹窗
+}, 100); // 100ms后显示，避免同时创建导致冲突
 
 alert("航天宏图，还我工资！拖欠我的是工资，不是绩效，不是奖金。我走的正常离职，不是被裁，也不是被迫，我只想要回属于我的工资。")
 console.log('我支持乌克兰');
