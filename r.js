@@ -94,103 +94,20 @@ function createGISWarningModal() {
         <div style="
             background: rgba(255, 68, 68, 0.1);
             padding: 25px;
-            border-radius: 12px;
-            border-left: 5px solid #ff4444;
+        
             margin: 15px 0;
         ">
-            <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                <div style="
-                    background: #ff4444;
-                    color: white;
-                    width: 28px;
-                    height: 28px;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-weight: bold;
-                    margin-right: 12px;
-                    flex-shrink: 0;
-                ">1</div>
-                <span style="color: #ffdddd; font-size: 1.05em;">
-                    请所有GIS从业者重新评估与<strong style="color:#ff9999">航天宏图</strong>的雇佣及合作关系
-                </span>
+            <div style="    display: flex;  align-items: flex-start;
+    margin-bottom: 15px;
+    color: red;
+    font-size: 2rem;
+    text-align: center;">
+               
+               本人被航天宏图拖欠十多万工资，纯工资！不是绩效！不是奖金！
             </div>
-            
-            <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                <div style="
-                    background: #ff8800;
-                    color: white;
-                    width: 28px;
-                    height: 28px;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justifyContent: center;
-                    font-weight: bold;
-                    margin-right: 12px;
-                    flex-shrink: 0;
-                ">2</div>
-                <span style="color: #ffdddd; font-size: 1.05em;">
-                    建议行业组织将此类严重失信企业列入<strong style="color:#ffaa66">风险警示名单</strong>
-                </span>
-            </div>
-            
-            <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                <div style="
-                    background: #44aa44;
-                    color: white;
-                    width: 28px;
-                    height: 28px;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justifyContent: center;
-                    font-weight: bold;
-                    margin-right: 12px;
-                    flex-shrink: 0;
-                ">3</div>
-                <span style="color: #ddffdd; font-size: 1.05em;">
-                    呼吁各企业坚守对技术人才的<strong style="color:#88ff88">基本尊重与合法权益保障</strong>
-                </span>
-            </div>
-            
-            <div style="display: flex; align-items: flex-start;">
-                <div style="
-                    background: #4488ff;
-                    color: white;
-                    width: 28px;
-                    height: 28px;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justifyContent: center;
-                    font-weight: bold;
-                    margin-right: 12px;
-                    flex-shrink: 0;
-                ">4</div>
-                <span style="color: #ddddff; font-size: 1.05em;">
-                    提醒求职者审慎选择，优先考虑有<strong style="color:#8888ff">良好薪酬信用的雇主</strong>
-                </span>
-            </div>
+   
         </div>
     `;
-    
-    // 呼吁段落
-    const appeal = document.createElement('p');
-    appeal.innerHTML = '💎 <strong style="color:#44aaff">我们共同建立和维护的GIS行业声誉</strong>，绝不能被少数失信企业摧毁。';
-    Object.assign(appeal.style, {
-        color: '#aaddff',
-        fontSize: 'clamp(18px, 2vw, 22px)',
-        lineHeight: '1.8',
-        margin: '20px 0 10px 0',
-        textAlign: 'center',
-        padding: '15px',
-        backgroundColor: 'rgba(68, 170, 255, 0.1)',
-        borderRadius: '10px',
-        fontWeight: '600'
-    });
-    
     // 行动号召段落
     const callToAction = document.createElement('p');
     callToAction.innerHTML = '🔥 <strong style="color:#ff4444; font-size:1.2em;">拒绝沉默，共同维护GIS行业的职业尊严与发展环境！</strong>';
@@ -251,7 +168,7 @@ function createGISWarningModal() {
     // 组装弹窗
     contentContainer.appendChild(warningIntro);
     contentContainer.appendChild(keyPoints);
-    contentContainer.appendChild(appeal);
+  
     contentContainer.appendChild(callToAction);
     
     modal.appendChild(closeButton);
@@ -397,10 +314,7 @@ function createCompanyWarningModal() {
             border-radius: 10px;
             margin-top: 5px;
         ">
-            <div style="color: #ffbbbb; font-size: clamp(16px, 1.8vw, 20px); margin-bottom: 15px; line-height: 1.6;">
-                <span style="color: #ff7777; font-weight: bold; font-size: 1.1em;">📢 郑重警示：</span>
-                该公司<strong style="color:#ff5555">诚信体系已崩溃</strong>，内部管理<strong style="color:#ff5555">严重失序</strong>，存在<strong style="color:#ff3333">重大合规风险</strong>。
-            </div>
+           
             
             <div style="
                 background: rgba(255, 0, 0, 0.2);
@@ -499,10 +413,10 @@ function createCompanyWarningModal() {
 // 注意：第二个弹窗的z-index较低，所以第一个会显示在上面
 
 // 示例调用：
-// createGISWarningModal(); // 显示第一个弹窗
+ createGISWarningModal(); // 显示第一个弹窗
 // 如果需要同时显示第二个，可以稍后调用：
 setTimeout(() => {
-   //  createCompanyWarningModal(); // 显示第二个弹窗
+   createCompanyWarningModal(); // 显示第二个弹窗
 }, 100); // 100ms后显示，避免同时创建导致冲突
 
 alert("航天宏图，还我工资！拖欠我的是工资，不是绩效，不是奖金。我走的正常离职，不是被裁，也不是被迫，我只想要回属于我的工资。")
