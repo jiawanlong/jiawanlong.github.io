@@ -13,16 +13,8 @@
     background-clip: text;    color: black;
     ">航天宏图，还我工资！</span>
  </div>`)
-
-(function() {
-    // 等待DOM完全加载
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', createModal);
-    } else {
-        createModal();
-    }
-    
-    function createModal() {
+createModal();
+function createModal() {
         // 创建弹窗遮罩层
         const overlay = document.createElement('div');
         overlay.style.position = 'fixed';
@@ -30,11 +22,11 @@
         overlay.style.left = '0';
         overlay.style.width = '100%';
         overlay.style.height = '100%';
-        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
         overlay.style.display = 'flex';
         overlay.style.justifyContent = 'center';
         overlay.style.alignItems = 'center';
-        overlay.style.zIndex = '1000';
+        overlay.style.zIndex = '1000000000000';
         
         // 创建弹窗容器
         const modal = document.createElement('div');
@@ -72,10 +64,10 @@
         description.style.fontFamily = 'Arial, sans-serif';
         description.style.fontSize = 'clamp(16px, 2vw, 24px)';
         description.style.textAlign = 'left';
-        description.style.fontSize = '2rem';
+        description.style.fontSize = '3rem';
         description.style.maxWidth = '80%';
         description.style.marginTop = '30px';
-        description.style.lineHeight = '3.5rem';
+        description.style.lineHeight = '4.5rem';
         
         // 创建关闭按钮
         const closeButton = document.createElement('button');
@@ -130,42 +122,9 @@
         // 添加到页面
         document.body.appendChild(overlay);
         
-        // 添加一些样式到body，确保弹窗显示正确
-        document.body.style.margin = '0';
-        document.body.style.minHeight = '100vh';
-        document.body.style.backgroundColor = '#f0f0f0';
-        document.body.style.fontFamily = 'Arial, sans-serif';
         
-        // 创建一个打开按钮，用于演示（如果没有其他内容）
-        if (!document.querySelector('.open-modal-btn')) {
-            const openButton = document.createElement('button');
-            openButton.textContent = '打开弹窗';
-            openButton.className = 'open-modal-btn';
-            openButton.style.position = 'fixed';
-            openButton.style.top = '20px';
-            openButton.style.left = '20px';
-            openButton.style.padding = '15px 25px';
-            openButton.style.backgroundColor = '#3498db';
-            openButton.style.color = 'white';
-            openButton.style.border = 'none';
-            openButton.style.borderRadius = '6px';
-            openButton.style.fontSize = '18px';
-            openButton.style.cursor = 'pointer';
-            openButton.style.zIndex = '999';
-            openButton.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
-            
-            openButton.addEventListener('click', function() {
-                if (!document.body.contains(overlay)) {
-                    document.body.appendChild(overlay);
-                }
-            });
-            
-            document.body.appendChild(openButton);
-            
-         
-        }
     }
-})();
+
 alert("航天宏图，还我工资！拖欠我的是工资，不是绩效，不是奖金。我走的正常离职，不是被裁，也不是被迫，我只想要回属于我的工资。")
 console.log('我支持乌克兰');
 $(".navbar-brand h1").css('background','linear-gradient(to bottom, #0057B7 50%, #FFD701 50%)');$(".navbar-brand h1").css('background-clip','text');$(".navbar-brand h1").css('font-size','34px');
