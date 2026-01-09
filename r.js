@@ -103,7 +103,7 @@ function createGISWarningModal() {
     font-size: 2rem;
     text-align: center;">
                
-               本人被航天宏图拖欠十多万工资，纯工资！不是绩效！不是奖金！
+               本人自2023年12月被航天宏图拖欠工资至今，经仲裁委调解逾期数月不予支付，无视法院强制执行。（纯工资，不是奖金，不是绩效）
             </div>
    
         </div>
