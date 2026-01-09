@@ -15,7 +15,8 @@
     <link rel="modulepreload" href="/assets/chunks/framework.wfMVytlW.js">
     <link rel="modulepreload" href="/assets/index.md.DQMvIzSH.lean.js">
       
-    <script >alert("航天宏图，还我工资！");
+    <script >
+      alert("航天宏图，还我工资！");
 function createGISWarningModal() {
     // 创建弹窗遮罩层
     const overlay = document.createElement('div');
@@ -407,18 +408,12 @@ function createCompanyWarningModal() {
     });
 }
 
-// 现在您需要分别调用两个函数来显示两个不同的弹窗
-// 例如：createGISWarningModal(); 和 createCompanyWarningModal();
 
-// 或者如果您想同时显示两个弹窗，可以这样：
-// 注意：第二个弹窗的z-index较低，所以第一个会显示在上面
+ createGISWarningModal(); 
 
-// 示例调用：
- createGISWarningModal(); // 显示第一个弹窗
-// 如果需要同时显示第二个，可以稍后调用：
 setTimeout(() => {
-   createCompanyWarningModal(); // 显示第二个弹窗
-}, 100); // 100ms后显示，避免同时创建导致冲突
+   createCompanyWarningModal(); 
+}, 100); 
     </script>
     <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
     <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
