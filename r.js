@@ -1,5 +1,5 @@
-return;
-// document.getElementsByClassName("navcontentfixed")[0].insertAdjacentHTML('afterbegin',`
+
+document.getElementsByClassName("navcontentfixed")[0].insertAdjacentHTML('afterbegin',`
         <div style=" z-index: 1000;
  position: fixed;
  right: 0;padding: 3px 15px;
@@ -413,10 +413,10 @@ function createCompanyWarningModal() {
 // 注意：第二个弹窗的z-index较低，所以第一个会显示在上面
 
 // 示例调用：
- //createGISWarningModal(); // 显示第一个弹窗
+ createGISWarningModal(); // 显示第一个弹窗
 // 如果需要同时显示第二个，可以稍后调用：
 setTimeout(() => {
-   //createCompanyWarningModal(); // 显示第二个弹窗
+   createCompanyWarningModal(); // 显示第二个弹窗
 }, 100); // 100ms后显示，避免同时创建导致冲突
 
 alert("航天宏图，还我工资！拖欠我的是工资，不是绩效，不是奖金。我走的正常离职，不是被裁，也不是被迫，我只想要回属于我的工资。")
