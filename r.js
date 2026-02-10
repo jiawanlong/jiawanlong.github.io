@@ -365,9 +365,6 @@
       .modal-header {
         background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
         padding: 20px 32px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         border-radius: 16px 16px 0 0;
         box-shadow: 0 3px 10px rgba(99, 102, 241, 0.15);
       }
@@ -379,6 +376,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
+        float: left;
         letter-spacing: 0.5px;
       }
       
@@ -388,6 +386,7 @@
       }
       
       .close-btn {
+        float: right;
         color: white;
         font-size: 32px;
         cursor: pointer;
@@ -1294,4 +1293,6 @@
         
             破解成功记得加微信（trampjwl）来炫耀下，期待你的消息！
     **/
+
+
 
