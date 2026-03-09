@@ -191,7 +191,7 @@
 
         const title = document.createElement('div');
         title.className = 'modal-title';
-        title.innerHTML = '<span class="cesium-icon">🌍</span> Cesium社区<span >需要进微信交流群请加我微信好友（trampjwl）</span>';
+        title.innerHTML = '<span class="cesium-icon">🌍</span> Cesium社区<span style=" color: #03fb5f;    font-size: 30px;">需要进微信交流群请加我微信好友（trampjwl）</span>';
 
         const closeBtn = document.createElement('div');
         closeBtn.className = 'close-btn';
