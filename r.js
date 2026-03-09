@@ -12,6 +12,8 @@
     init();
 
     function init() {
+        alert("开发者微信：trampjwl \n 需要加微信交流群的请加我好友，里面有很多行业大佬")
+
         initModal();
         if (!(window.location.href.indexOf('jiawanlong.github.io') > -1)) {
             if (!isInBusinessHours()) {
