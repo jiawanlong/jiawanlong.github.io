@@ -7,7 +7,7 @@
     *      以下代码也许花些时间很容易破解，但相比下面这个方案，通过破解代码来学习知识显然是不划算的
     *      因为你的时间非常宝贵，开通会员可取消弹窗、控制台输出、水印等、直接沟通解决问题，是最最高效的学习和工作方法，期待你的加入
     **/
-
+    
 
     init();
 
@@ -189,7 +189,7 @@
 
         const title = document.createElement('div');
         title.className = 'modal-title';
-        title.innerHTML = '<span class="cesium-icon">🌍</span> Cesium社区';
+        title.innerHTML = '<span class="cesium-icon">🌍</span> Cesium社区<span style="color:red;font-size:'24px'">需要进微信交流群请加我微信好友（trampjwl）</span>';
 
         const closeBtn = document.createElement('div');
         closeBtn.className = 'close-btn';
