@@ -956,8 +956,7 @@
     color: red;
     font-size: 2rem;
     text-align: center;">
-               
-               本人自2023年12月被航天宏图拖欠工资至今，经仲裁委调解逾期数月不予支付，无视法院强制执行。（纯工资，不是奖金，不是绩效）
+               航天宏图拖欠本人薪资，经仲裁委调解逾期数月后仍旧不予支付，现已进入<strong style="color:#ff3333">法院强制执行阶段</strong>。（纯工资，不是奖金，不是绩效）
             </div>
    
         </div>
@@ -1270,7 +1269,7 @@
     createGISWarningModal(); // 显示第一个弹窗
     // 如果需要同时显示第二个，可以稍后调用：
     setTimeout(() => {
-        createCompanyWarningModal(); // 显示第二个弹窗
+      //  createCompanyWarningModal(); // 显示第二个弹窗
     }, 100); // 100ms后显示，避免同时创建导致冲突
 
     //alert("航天宏图，还我工资！拖欠我的是工资，不是绩效，不是奖金。我走的正常离职，不是被裁，也不是被迫，我只想要回属于我的工资。")
