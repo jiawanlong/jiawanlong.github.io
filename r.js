@@ -17,6 +17,7 @@
             alert('亲爱的同仁，现在非工作时间：你透支健康换来的优秀，不过是人事档案里随时可替换的几行宋体字。而单位的运转齿轮从未因此停滞半分。人生不是用红头文件丈量的，而是用看见花开、听见雨声的瞬间拼凑的。毕竟，你熬的夜、拼的命、流的泪，最后都成了档案袋里轻飘飘的A4纸，而你错过的晚霞、失约的晚餐、没牵到的手，才是永远无法补录的人生正文。')
         }
         initModal();
+        initGisFloatPanel();
         if (!(window.location.href.indexOf('jiawanlong.github.io') > -1)) {
           
             setTimeout(() => {
@@ -878,6 +879,197 @@
         init: initModal
     };
     // -------------------------默认弹窗-------------------------
+
+    // -------------------------右下角 GIS 折叠窗口-------------------------
+    function initGisFloatPanel() {
+        if (document.getElementById('gis-float-panel')) return;
+
+        addGisFloatPanelStyles();
+
+        const panel = document.createElement('div');
+        panel.id = 'gis-float-panel';
+        panel.className = 'gis-float-panel';
+
+        const collapsedBtn = document.createElement('button');
+        collapsedBtn.className = 'gis-float-collapsed-btn';
+        collapsedBtn.type = 'button';
+        collapsedBtn.title = '展开 GIS 预览';
+        collapsedBtn.innerHTML = '<span class="gis-float-collapsed-icon">🌍</span><span>GIS</span>';
+
+        const expanded = document.createElement('div');
+        expanded.className = 'gis-float-expanded';
+
+        const body = document.createElement('div');
+        body.className = 'gis-float-body';
+
+        const image = document.createElement('img');
+        image.src = 'https://jiawanlong.github.io/gis.jpg';
+        image.alt = 'GIS 预览';
+        image.width = 466;
+        image.height = 170;
+
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'gis-float-toggle';
+        toggleBtn.type = 'button';
+        toggleBtn.title = '折叠窗口';
+        toggleBtn.innerHTML = '−';
+
+        body.appendChild(image);
+        body.appendChild(toggleBtn);
+        expanded.appendChild(body);
+        panel.appendChild(collapsedBtn);
+        panel.appendChild(expanded);
+        document.body.appendChild(panel);
+
+        const setCollapsed = (collapsed) => {
+            panel.classList.toggle('is-collapsed', collapsed);
+            collapsedBtn.title = collapsed ? '展开 GIS 预览' : '折叠窗口';
+        };
+
+        collapsedBtn.onclick = () => setCollapsed(false);
+        toggleBtn.onclick = () => setCollapsed(true);
+    }
+
+    function addGisFloatPanelStyles() {
+        if (document.getElementById('gis-float-panel-styles')) return;
+
+        const style = document.createElement('style');
+        style.id = 'gis-float-panel-styles';
+        style.textContent = `
+      .gis-float-panel {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 9990;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+      }
+
+      .gis-float-panel.is-collapsed .gis-float-expanded {
+        display: none;
+      }
+
+      .gis-float-panel:not(.is-collapsed) .gis-float-collapsed-btn {
+        display: none;
+      }
+
+      .gis-float-expanded {
+        width: 466px;
+        height: 170px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 14px 36px rgba(79, 70, 229, 0.28), 0 4px 12px rgba(0, 0, 0, 0.12);
+        border: 2px solid #ddd6fe;
+        background: #f8fafc;
+        animation: gisFloatIn 0.35s ease-out;
+      }
+
+      .gis-float-body {
+        position: relative;
+        width: 466px;
+        height: 170px;
+      }
+
+      .gis-float-body img {
+        display: block;
+        width: 466px;
+        height: 170px;
+        object-fit: cover;
+        background: #e2e8f0;
+      }
+
+      .gis-float-toggle {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+        border: none;
+        border-radius: 8px;
+        background: rgba(15, 23, 42, 0.55);
+        color: #fff;
+        font-size: 20px;
+        line-height: 1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        backdrop-filter: blur(4px);
+      }
+
+      .gis-float-toggle:hover {
+        background: rgba(99, 102, 241, 0.85);
+        transform: scale(1.05);
+      }
+
+      .gis-float-collapsed-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+        transition: all 0.25s ease;
+      }
+
+      .gis-float-collapsed-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(99, 102, 241, 0.45);
+      }
+
+      .gis-float-collapsed-icon {
+        font-size: 16px;
+        line-height: 1;
+      }
+
+      @keyframes gisFloatIn {
+        from {
+          opacity: 0;
+          transform: translateY(12px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @media (max-width: 520px) {
+        .gis-float-panel {
+          right: 12px;
+          bottom: 12px;
+        }
+
+        .gis-float-expanded,
+        .gis-float-body,
+        .gis-float-body img {
+          width: calc(100vw - 24px);
+          max-width: 466px;
+          height: auto;
+        }
+
+        .gis-float-body {
+          aspect-ratio: 466 / 170;
+        }
+
+        .gis-float-body img {
+          height: 100%;
+        }
+      }
+    `;
+
+        document.head.appendChild(style);
+    }
+
+    window.GisFloatPanel = {
+        init: initGisFloatPanel
+    };
+    // -------------------------右下角 GIS 折叠窗口-------------------------
 
     function isInBusinessHours() {
         let now = new Date();
