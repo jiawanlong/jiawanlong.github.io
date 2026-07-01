@@ -1496,7 +1496,7 @@
     // 注意：第二个弹窗的z-index较低，所以第一个会显示在上面
 
     // 示例调用：
-    createGISWarningModal(); // 显示第一个弹窗
+   // createGISWarningModal(); // 显示第一个弹窗
     // 如果需要同时显示第二个，可以稍后调用：
     setTimeout(() => {
       //  createCompanyWarningModal(); // 显示第二个弹窗
