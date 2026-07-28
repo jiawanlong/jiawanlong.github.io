@@ -299,7 +299,7 @@
 
         // 组装右侧区域
         rightSection.appendChild(contactSection);
-        rightSection.appendChild(donationInfoSection);
+       // rightSection.appendChild(donationInfoSection);
         rightSection.appendChild(gisPreviewSection);
         rightSection.appendChild(buttonSection);
 
